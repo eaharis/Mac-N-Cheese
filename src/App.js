@@ -6,12 +6,18 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from  'react-bootstrap/NavDropdown'
 import {Component} from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import menu from "./components/Menu";
 
 class App extends Component {
   render() {
       return (
         <div className="App">
-            <Header />
+            <BrowserRouter>
+              <Switch>
+                <Route exact path="/menu/pinks" component={menu} />
+              </Switch>
+            </BrowserRouter>
         </div>
       );
     }
