@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Container, Row, Col, Card, Breadcrumb, Form, ListGroup, Dropdown, DropdownButton, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -25,6 +25,20 @@ import Swal from 'sweetalert2';
 const Profile = () => {
 
     const [phoneNumber, setPhoneNumber] = useState("");
+
+    // Default image is Ada Lovelace
+    const [profileImage, setProfileImage] = useState("https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE4MDAzNDEwODQwOTQ2MTkw/ada-lovelace-20825279-1-402.jpg");
+    const profilePictureInput = useRef(null);
+
+    const updateProfilePicture = () => {
+        const image = profilePictureInput.current.files[0];
+
+        // Only update if an image has been chosen to upload
+        if (image) {
+            setProfileImage(URL.createObjectURL(image));
+        }
+    }
+
     return (
         <Container className="Profile">
             <script src="bootstrap-slider.min.js"></script>
@@ -34,9 +48,9 @@ const Profile = () => {
                     <Card>
                         <Card.Body className="card-body">
                             <div className="d-flex flex-column align-items-center text-center">
-                                {/* TODO: Allow for profile picture to be updated by clicking */}
-                                <div className="profilePicture rounded-circle">
-                                    <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE4MDAzNDEwODQwOTQ2MTkw/ada-lovelace-20825279-1-402.jpg" />
+                                <div onClick={() => profilePictureInput.current.click()} className="profilePicture rounded-circle">
+                                    <input ref={profilePictureInput} type="file" hidden={true} onChange={() => updateProfilePicture()} accept=".png, .jpg, .svg" />
+                                    <img src={profileImage} />
                                     <p style={{ position: "absolute", margin: "0", background: "rgba(0,0,0,0.7)", bottom: 0, width: "100%" }}>
                                         <FontAwesomeIcon icon={faCamera} color="white" />
                                     </p>
