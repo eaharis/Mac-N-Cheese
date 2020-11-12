@@ -18,17 +18,20 @@ class menu extends Component {
   constructor(props) {
     super(props);
 
+    console.log(this.props.match.params.restaurant);
+
     this.state = {
-      menulist: menuData.pinks.menu,
-      menuOnDisplay: menuData.pinks.menu[0].name,
-      menuItems: menuData.pinks.menu[0].items,
+      restaurant: this.props.match.params.restaurant,
+      menulist: menuData[this.props.match.params.restaurant].menu,
+      menuOnDisplay: menuData[this.props.match.params.restaurant].menu[0].name,
+      menuItems: menuData[this.props.match.params.restaurant].menu[0].items,
       idx: 0
     }
   }
 
   handleClick(idx) {
     this.setState({
-      menulist: menuData.pinks.menu,
+      ...this.state,
       menuOnDisplay: this.state.menulist[idx].name,
       menuItems: this.state.menulist[idx].items,
       idx: idx
@@ -84,11 +87,11 @@ class menu extends Component {
                       </Card.Header>
                     </Col>
                     <Col xs={12} md={8}>
-                      <Card.Title>{name.toUpperCase()}</Card.Title>
-                      <Card.Title>
-                        Price: <Badge variant="info">{price}</Badge>{" "}
+                      <Card.Title style={{ "font-size": "30px" }}>{name.toUpperCase()}</Card.Title>
+                      <Card.Title style={{ "font-size": "30px" }}>
+                        Price: <Badge variant="info">$ {price}</Badge>{" "}
                       </Card.Title>
-                      <Card.Text>{description}</Card.Text>
+                      <Card.Text style={{ "font-size": "25px" }}>{description}</Card.Text>
                     </Col>
                   </Row>
                 </Card>

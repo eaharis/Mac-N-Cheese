@@ -12,18 +12,17 @@ import map from './components/Map';
 
 class App extends Component {
   render() {
-      return (
-        <div className="App">
-          <Header />
-          <BrowserRouter>
-            <Switch>
-              <Route exact path="/menu/pinks" component={menu} />
-              <Route exact path="/map" component={map} />
-            </Switch>
-          </BrowserRouter>
-        </div>
-      );
-    }
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Switch>
+            <Route path="/menu/:restaurant" component={menu} />
+            <Route exact path="/map" component={map} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
   }
+}
 
 export default App;
