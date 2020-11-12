@@ -72,21 +72,21 @@ class Map extends Component {
               <div key={id}>
                 <Card className='p-2'>
                   <Row>
-                    <Col xs={3} md={3}>
+                    <Col sm={4}>
                       <Card.Header>
                         <Image
                           src={imageUrl}
                           style={{
                             display: "block",
                             margin: "auto",
-                            width: "15vw",
+                            width: "13vw",
                             height: "15vh",
                           }}
                           rounded
                         />
                       </Card.Header>
                     </Col>
-                    <Col xs={12} md={8}>
+                    <Col sm={8}>
                       <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
                       <Card.Title style={{ "font-size": "1.8em" }}>
                         Rating: <Badge variant="info">{rating}</Badge>{" "}

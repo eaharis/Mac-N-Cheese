@@ -87,28 +87,28 @@ class Menu extends Component {
           this.state.menuItems
           .map(({ name, imageUrl, price, description, id }) => (
               <div key={id}>
-                <Card  className='p-2'>
+                <Card  className='p-2' >
                   <Row>
-                    <Col xs={3} md={3}>
+                    <Col sm={4}>
                       <Card.Header>
                         <Image
                           src={imageUrl}
                           style={{
                             display: "block",
                             margin: "auto",
-                            width: "15vw",
+                            width: "13.5vw",
                             height: "15vh",
                           }}
                           rounded
                         />
                       </Card.Header>
                     </Col>
-                    <Col xs={12} md={8}>
+                    <Col sm={8}>
                       <Card.Title style={{ "font-size": "1.8em" }}>{name.charAt(0).toUpperCase() + name.slice(1)}</Card.Title>
                       <Card.Title style={{ "font-size": "1.8em" }}>
                         Price: <Badge variant="info">$ {price}</Badge>{" "}
                       </Card.Title>
-                      <Card.Text style={{ "font-size": "1.6en" }}>{description}</Card.Text>
+                      <Card.Text style={{ "font-size": "1.6em" }}>{description}</Card.Text>
                     </Col>
                   </Row>
                 </Card>
