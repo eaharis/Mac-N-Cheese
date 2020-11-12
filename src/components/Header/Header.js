@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import logo from '../logo_transparent.png';
+import logo from './logo_transparent.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styling/Header.css'
+import './Header.css';
 import { connect } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import * as actionTypes from "../store/actionTypes"
+import * as actionTypes from "../../store/actionTypes"
 
 class Header extends Component {
     render() {

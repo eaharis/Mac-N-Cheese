@@ -1,10 +1,5 @@
-import logo from './logo_transparent.png';
-
 import './App.css';
-import Header from './components/Header'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import Header from './components/Header/Header'
 import { Component } from "react";
 import { BrowserRouter, Route } from 'react-router-dom';
 import Switch from 'react-bootstrap/esm/Switch';
