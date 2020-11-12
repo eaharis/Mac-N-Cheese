@@ -19,9 +19,7 @@ import PhoneInput from 'react-phone-number-input/input'
 
 import Swal from 'sweetalert2';
 
-/*
- * dsjljd 
-*/
+
 const Profile = () => {
 
     const [phoneNumber, setPhoneNumber] = useState("");
