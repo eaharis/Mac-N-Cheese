@@ -26,28 +26,29 @@ class Home extends Component {
         <div className='preview'>
           {
             this.state.restaurants.map(({name, imageUrl, rating}) => (
-              <Card style={{ width: '23rem', margin: '3px' }}>
+              <Card className='m-1' style={{ width: '23rem' }}>
                 <Card.Header>
                   <Image
                     src={imageUrl}
                     style={{
                       display: "block",
                       margin: "auto",
-                      width: "158px",
-                      height: "148px",
+                      width: "15vw",
+                      height: "15vh",
                     }}
                     rounded
                   />
                 </Card.Header>
                 <Card.Body>
                   <Card.Title>{name}</Card.Title>
-                  <Card.Title style={{ "font-size": "30px" }}>{name}</Card.Title>
-                  <Card.Title style={{ "font-size": "30px" }}>
+                  <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
+                  <Card.Title style={{ "font-size": "1.8em" }}>
                     Rating: <Badge variant="info">{rating}</Badge>{" "}
                   </Card.Title>
                   <StarRatings
                     rating={rating}
                     starRatedColor="green"
+                    starDimension="1.8em"
                     numberOfStars={5}
                     starSpacing='1px'
                     name='rating'

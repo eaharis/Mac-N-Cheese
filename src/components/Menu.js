@@ -14,11 +14,9 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 
-class menu extends Component {
+class Menu extends Component {
   constructor(props) {
     super(props);
-
-    console.log(this.props.match.params.restaurant);
 
     this.state = {
       restaurant: this.props.match.params.restaurant,
@@ -63,12 +61,12 @@ class menu extends Component {
             style={{
               display: "block",
               margin: "auto",
-              width: "158px",
-              height: "148px",
+              width: "15vw",
+              height: "15vh",
             }}
             rounded
           />
-          <Dropdown as={ButtonGroup}  style={{"margin-right": "10px"}}>
+          <Dropdown as={ButtonGroup}  className='mr-2' >
             <Button variant="success">All Menus</Button>
             <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
             <Dropdown.Menu>
@@ -80,7 +78,7 @@ class menu extends Component {
             </Dropdown.Menu>
           </Dropdown>
           <div style={{"font-weight": "bold"}}>Sort by price:</div>
-          <Button style={{"margin-right": "10px"}} onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
+          <Button className='mr-2' onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
           <Button onClick={this.onSortDown.bind(this)}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
         </div>
         
@@ -89,28 +87,28 @@ class menu extends Component {
           this.state.menuItems
           .map(({ name, imageUrl, price, description, id }) => (
               <div key={id}>
-                <Card style={{ padding: "30px" }}>
+                <Card  className='p-2'>
                   <Row>
-                    <Col xs={3} md={2}>
+                    <Col xs={3} md={3}>
                       <Card.Header>
                         <Image
                           src={imageUrl}
                           style={{
                             display: "block",
                             margin: "auto",
-                            width: "158px",
-                            height: "148px",
+                            width: "15vw",
+                            height: "15vh",
                           }}
                           rounded
                         />
                       </Card.Header>
                     </Col>
                     <Col xs={12} md={8}>
-                      <Card.Title style={{ "font-size": "30px" }}>{name.charAt(0).toUpperCase() + name.slice(1)}</Card.Title>
-                      <Card.Title style={{ "font-size": "30px" }}>
+                      <Card.Title style={{ "font-size": "1.8em" }}>{name.charAt(0).toUpperCase() + name.slice(1)}</Card.Title>
+                      <Card.Title style={{ "font-size": "1.8em" }}>
                         Price: <Badge variant="info">$ {price}</Badge>{" "}
                       </Card.Title>
-                      <Card.Text style={{ "font-size": "25px" }}>{description}</Card.Text>
+                      <Card.Text style={{ "font-size": "1.6en" }}>{description}</Card.Text>
                     </Col>
                   </Row>
                 </Card>
@@ -125,4 +123,4 @@ class menu extends Component {
   }
 }
 
-export default connect()(menu);
+export default connect()(Menu);

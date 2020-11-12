@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'react-bootstrap';
 
-class map extends Component {
+class Map extends Component {
   constructor(props) {
     super(props);
 
@@ -56,13 +56,13 @@ class map extends Component {
         </div>
         <div className='category'>
           <Card border="primary">
-            <Card.Header style={{ "font-size": "30px" }}>All Restaurants</Card.Header>
+            <Card.Header style={{ "font-size": "1.8em" }}>All Restaurants</Card.Header>
             <Card.Body>
-              <Card.Text style={{ "font-size": "20px" }}>
+              <Card.Text style={{ "font-size": "1.5em" }}>
                 Below are a list of all restaurants. All of them would have been displayed on Google Map, but due to development budgets, we are unable to mark them on map. 
               </Card.Text>
               <Card.Title>Sort by ratings</Card.Title>
-              <Button style={{"margin-right": "10px"}} onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
+              <Button className='mr-2'  onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
               <Button onClick={this.onSortDown.bind(this)}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
 
             </Card.Body>
@@ -70,29 +70,30 @@ class map extends Component {
         {
           this.state.restaurants.map(({id, name, imageUrl, rating}) => (
               <div key={id}>
-                <Card style={{ padding: "30px" }}>
+                <Card className='p-2'>
                   <Row>
-                    <Col xs={3} md={2}>
+                    <Col xs={3} md={3}>
                       <Card.Header>
                         <Image
                           src={imageUrl}
                           style={{
                             display: "block",
                             margin: "auto",
-                            width: "158px",
-                            height: "148px",
+                            width: "15vw",
+                            height: "15vh",
                           }}
                           rounded
                         />
                       </Card.Header>
                     </Col>
                     <Col xs={12} md={8}>
-                      <Card.Title style={{ "font-size": "30px" }}>{name}</Card.Title>
-                      <Card.Title style={{ "font-size": "30px" }}>
+                      <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
+                      <Card.Title style={{ "font-size": "1.8em" }}>
                         Rating: <Badge variant="info">{rating}</Badge>{" "}
                       </Card.Title>
                       <StarRatings
                         rating={rating}
+                        starDimension="1.8em"
                         starRatedColor="green"
                         numberOfStars={5}
                         starSpacing='1px'
@@ -112,4 +113,4 @@ class map extends Component {
 
 }
 
-export default connect()(map);
+export default connect()(Map);
