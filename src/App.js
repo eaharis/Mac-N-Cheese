@@ -1,28 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import Profile from './components/Profile/Profile';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from './logo_transparent.png';
 
-function App() {
-  return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      <Profile />
-    </div>
-  );
+import './App.css';
+import Header from './components/Header'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import { Component } from "react";
+import { BrowserRouter, Route } from 'react-router-dom';
+import Switch from 'react-bootstrap/esm/Switch';
+import Profile from './components/Profile/Profile';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/profile" component={Profile} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;
