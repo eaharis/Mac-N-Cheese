@@ -27,7 +27,7 @@ class Header extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link  href={pages.HOME} onSelect={this.props.clickedHome}> Home</Nav.Link>
+                        <Nav.Link href={pages.HOME} onSelect={this.props.clickedHome}> Home</Nav.Link>
                         <Nav.Link href={pages.BROWSE} onSelect={this.props.clickedBrowse}>Browse</Nav.Link>
                         <Nav.Link href={pages.PROMOTIONS} onSelect={this.props.clickedPromotions}>Promotions</Nav.Link>
                         <Nav.Link href={pages.DINEIN} onSelect={this.props.clickedDineIn}>Dine In</Nav.Link>
