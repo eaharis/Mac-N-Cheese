@@ -8,7 +8,7 @@ const foodWhitelist = [
     { "value": "Beef", "image": "https://openclipart.org/download/175668" },
     { "value": "Mozzarella cheese", "image": "https://openclipart.org/download/293568" },
     { "value": "Bacon", "image": "https://openclipart.org/download/209517" },
-    { "value": "Corned beef", "image": null },
+    { "value": "Corned beef", "image": "https://openclipart.org/download/175668" },
     { "value": "Avocado", "image": "https://openclipart.org/download/321371" },
     { "value": "Pasta", "image": "https://openclipart.org/download/209691" },
     { "value": "Pineapple", "image": "https://openclipart.org/download/299198" },
@@ -24,7 +24,7 @@ const foodWhitelist = [
     { "value": "Ice Cream", "image": "https://openclipart.org/download/320949" },
     { "value": "Ham", "image": "https://openclipart.org/download/303163" },
     { "value": "Oysters", "image": "https://openclipart.org/download/209638" },
-    { "value": "Mashed potatoes", "image": null },
+    { "value": "Mashed potatoes", "image": "https://openclipart.org/download/301195" },
     { "value": "Soup", "image": "https://openclipart.org/download/302112" },
     { "value": "Asparagus", "image": "https://openclipart.org/download/227161" },
     { "value": "Sweet potato", "image": "https://openclipart.org/download/1028" },
@@ -49,7 +49,7 @@ const foodWhitelist = [
     { "value": "Lamb", "image": "https://openclipart.org/download/281091" },
     { "value": "Sweetcorn", "image": "https://openclipart.org/download/248688" },
     { "value": "Mushrooms", "image": "https://openclipart.org/download/26150" },
-    { "value": "Rice pudding", "image": null },
+    { "value": "Rice pudding", "image": "https://openclipart.org/download/316360" },
 
     // Custom Foods
     { "value": "Sandwich", "image": "https://openclipart.org/download/194414" },
