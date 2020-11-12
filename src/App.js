@@ -15,6 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <BrowserRouter>
           <Switch>
             <Route path="/menu/:restaurant" component={Menu} />
