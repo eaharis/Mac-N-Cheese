@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import menuData from '../menu.data';
-import menuCategory from './MenuCategory';
 import './styling/MenuCategory.css'
 
 import Button from "react-bootstrap/Button";
@@ -126,4 +125,4 @@ class menu extends Component {
   }
 }
 
-export default menu;
+export default connect()(menu);

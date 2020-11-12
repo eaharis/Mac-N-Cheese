@@ -4,11 +4,8 @@ import restaurantsData from '../restaurant.data';
 import './styling/Home.css';
 
 import Card from 'react-bootstrap/Card'
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Badge from "react-bootstrap/Badge";
 import Image from "react-bootstrap/Image";
-import Button from "react-bootstrap/Button";
 import StarRatings from 'react-star-ratings';
 
 class Home extends Component {
