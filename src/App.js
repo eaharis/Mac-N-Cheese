@@ -7,8 +7,9 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from  'react-bootstrap/NavDropdown'
 import {Component} from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import menu from "./components/Menu";
-import map from './components/Map';
+import Menu from "./components/Menu";
+import Map from './components/Map';
+import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -16,8 +17,10 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route path="/menu/:restaurant" component={menu} />
-            <Route exact path="/map" component={map} />
+            <Route path="/menu/:restaurant" component={Menu} />
+            <Route exact path="/map" component={Map} />
+            <Route exact path="/" component={Home} />
+
           </Switch>
         </BrowserRouter>
       </div>

@@ -107,7 +107,7 @@ class menu extends Component {
                       </Card.Header>
                     </Col>
                     <Col xs={12} md={8}>
-                      <Card.Title style={{ "font-size": "30px" }}>{name.toUpperCase()}</Card.Title>
+                      <Card.Title style={{ "font-size": "30px" }}>{name.charAt(0).toUpperCase() + name.slice(1)}</Card.Title>
                       <Card.Title style={{ "font-size": "30px" }}>
                         Price: <Badge variant="info">$ {price}</Badge>{" "}
                       </Card.Title>

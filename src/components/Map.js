@@ -87,7 +87,7 @@ class map extends Component {
                       </Card.Header>
                     </Col>
                     <Col xs={12} md={8}>
-                      <Card.Title style={{ "font-size": "30px" }}>{name.toUpperCase()}</Card.Title>
+                      <Card.Title style={{ "font-size": "30px" }}>{name}</Card.Title>
                       <Card.Title style={{ "font-size": "30px" }}>
                         Rating: <Badge variant="info">{rating}</Badge>{" "}
                       </Card.Title>
