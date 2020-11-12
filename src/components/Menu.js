@@ -12,7 +12,8 @@ import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import Image from "react-bootstrap/Image";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 
 class menu extends Component {
   constructor(props) {
@@ -37,6 +38,22 @@ class menu extends Component {
       idx: idx
     })
   }
+  onSortUp() {
+    let sorted = [...this.state.menuItems].sort((a, b) => {
+      return a.price - b.price;
+    });
+    this.setState({
+      menuItems: sorted
+    });
+  }
+  onSortDown() {
+    let sorted = [...this.state.menuItems].sort((a, b) => {
+      return b.price - a.price;
+    });
+    this.setState({
+      menuItems: sorted
+    });
+  }
 
   render() {
     return (
@@ -52,7 +69,7 @@ class menu extends Component {
             }}
             rounded
           />
-          <Dropdown as={ButtonGroup}>
+          <Dropdown as={ButtonGroup}  style={{"margin-right": "10px"}}>
             <Button variant="success">All Menus</Button>
             <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
             <Dropdown.Menu>
@@ -63,6 +80,9 @@ class menu extends Component {
               }
             </Dropdown.Menu>
           </Dropdown>
+          <div style={{"font-weight": "bold"}}>Sort by price:</div>
+          <Button style={{"margin-right": "10px"}} onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
+          <Button onClick={this.onSortDown.bind(this)}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
         </div>
         
         <div className='category'>
@@ -107,8 +127,3 @@ class menu extends Component {
 }
 
 export default menu;
-// menu
-//           .filter((item, idx) => idx < col)
-//           .map((item) => (
-//           <menuItem key={item.id} item={item} />
-//         ))

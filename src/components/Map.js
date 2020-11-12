@@ -26,7 +26,6 @@ class map extends Component {
     let sorted = [...this.state.restaurants].sort((a, b) => {
       return a.rating - b.rating;
     });
-    console.log(sorted);
     this.setState({
       restaurants: sorted
     });
@@ -35,7 +34,6 @@ class map extends Component {
     let sorted = [...this.state.restaurants].sort((a, b) => {
       return b.rating - a.rating;
     });
-    console.log(sorted);
     this.setState({
       restaurants: sorted
     });
