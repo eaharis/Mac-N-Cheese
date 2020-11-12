@@ -15,8 +15,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <BrowserRouter>
-          <Header />
           <Switch>
             <Route path="/menu/:restaurant" component={Menu} />
             <Route exact path="/map" component={Map} />
