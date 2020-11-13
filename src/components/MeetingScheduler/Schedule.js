@@ -360,8 +360,25 @@ const Schedule = [
     },
 
 
+    // Restaurant
+    {
+        id: 42,
+        title: "Restaurant",
+        macId: "restaurant",
+        startDate: new Date("2020-11-12 3:30 PM"),
+        endDate: new Date("2020-11-12 4:20 PM"),
+        rRule: "FREQ=DAILY"
+    },
 
-
+    // Suggestion
+    {
+        id: 43,
+        title: "Suggestion",
+        macId: "suggestion",
+        startDate: new Date("2020-11-12 4:30 PM"),
+        endDate: new Date("2020-11-12 5:20 PM"),
+        rRule: "FREQ=DAILY"
+    },
 ];
 
 export default Schedule;

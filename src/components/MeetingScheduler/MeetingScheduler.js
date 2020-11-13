@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-    teal, indigo, red, orange
+    teal, indigo, red, orange, blue, green
 } from '@material-ui/core/colors';
 import Paper from '@material-ui/core/Paper';
 import { ViewState, GroupingState, IntegratedGrouping, Resources } from '@devexpress/dx-react-scheduler';
@@ -66,6 +66,16 @@ const MeetingScheduler = () => {
             text: 'Esam Haris',
             id: 'harise',
             color: orange
+        },
+        {
+            text: 'Restaurant',
+            id: 'restaurant',
+            color: red
+        },
+        {
+            text: 'Suggestion',
+            id: 'suggestion',
+            color: green
         }
     ];
 
