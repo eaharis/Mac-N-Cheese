@@ -176,7 +176,7 @@ const MeetingScheduler = () => {
                             <hr />
                             <Paper>
                                 {/* TODO: Don't allow dates in the past to be picked */}
-                                <Scheduler data={Schedule} min={new Date(2020, 11, 3)} startDate="2020-11-12" endDate="2020-11-13">
+                                <Scheduler data={Schedule} min={new Date(2020, 11, 3)}>
                                     <ViewState
                                         // Today
                                         defaultCurrentDate={new Date()}
@@ -195,7 +195,7 @@ const MeetingScheduler = () => {
                                     <IntegratedGrouping />
                                     <GroupingPanel />
                                     <Toolbar />
-                                    <DateNavigator min="2020-08-12" />
+                                    <DateNavigator />
                                     <TodayButton />
 
                                 </Scheduler>
