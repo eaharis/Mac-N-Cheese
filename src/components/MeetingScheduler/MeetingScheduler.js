@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-    teal, indigo, red, orange, green
+    teal, indigo, red, orange, green, blue, purple
 } from '@material-ui/core/colors';
 import Paper from '@material-ui/core/Paper';
 import { ViewState, GroupingState, IntegratedGrouping, Resources } from '@devexpress/dx-react-scheduler';
@@ -34,6 +34,11 @@ const MeetingScheduler = () => {
     const MAX_SELECTED_FRIENDS = 3;
     const selectedFriends = friends.filter(friend => friend.active);
     const numOfFriendSelectionsRemaining = MAX_SELECTED_FRIENDS - selectedFriends.length;
+    const friendListHint = numOfFriendSelectionsRemaining
+        ? `Select up to ${numOfFriendSelectionsRemaining} more friend${numOfFriendSelectionsRemaining > 1 ? "s" : ""}`
+        : "Unselect a friend to select another";
+
+    const friendColours = [blue, orange, purple]
 
     const calendarColumns =
         [
@@ -43,11 +48,11 @@ const MeetingScheduler = () => {
                 color: indigo
             }
         ].concat(
-            selectedFriends.map(friend => (
+            selectedFriends.map((friend, i) => (
                 {
                     text: friend.name,
                     id: friend.macId,
-                    color: red
+                    color: friendColours[i]
                 }
             ))
         ).concat(
@@ -84,7 +89,7 @@ const MeetingScheduler = () => {
                                             </ListGroup.Item>
                                         )}
                                     </div>
-                                    <p className="text-muted" hidden={!numOfFriendSelectionsRemaining}>Select up to {numOfFriendSelectionsRemaining} more friend{numOfFriendSelectionsRemaining > 1 ? "s" : ""} </p>
+                                    <p className="text-muted">{friendListHint}</p>
                                 </ListGroup>
 
 

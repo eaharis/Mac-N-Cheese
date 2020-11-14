@@ -3,7 +3,7 @@ const friendList = [
         name: "Declan Wu",
         macId: "wus92",
         image: "https://www.famousbirthdays.com/faces/bell-drake-image.jpg",
-        active: true
+        active: false
     },
     {
         name: "Tobey Maguire",
@@ -15,13 +15,13 @@ const friendList = [
         name: "Esam Haris",
         macId: "harise",
         image: "https://www.biography.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTQ4MTUwOTQyMDE1OTU2Nzk4/tom-holland-photo-jason-kempin-getty-images-801510482-profile.jpg",
-        active: true
+        active: false
     },
     {
         name: "Ali Howidi",
         macId: "howidia",
         image: "https://pbs.twimg.com/profile_images/1045049020794761231/9EXXIIk6.jpg",
-        active: true
+        active: false
     },
     {
         name: "Jake Johnson",
