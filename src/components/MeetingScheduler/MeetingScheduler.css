@@ -3,3 +3,14 @@
     border: 1px solid rgba(0, 0, 0, 0.23) !important;
     padding: 5px 15px !important;
 }
+
+.scrollableFriendlist {
+    /* Displays 5 friends before scrolling needed */
+    height: calc(4em * 5);
+    overflow: auto;
+}
+
+.friendPhoto {
+    height: 2.5em;
+    width: 2.5em;
+}
