@@ -137,19 +137,23 @@ class NewMap extends Component {
           <Card border="primary">
             <Card.Header style={{ "font-size": "1.8em" }}>All Restaurants</Card.Header>
             <Card.Body>
-              <Card.Text style={{ "font-size": "1.5em" }}>
-                Below are a list of all restaurants. All of them would have been displayed on Google Map, but due to development budgets, we are unable to mark them on map.
-              </Card.Text>
               <SearchBox
-                placeholder="search restaurants"
+                placeholder="search all restaurants"
                 handleChange={this.handleChange}
+                className='mb-2'
               />
-              <Card.Title>Sort by ratings</Card.Title>
-              <Button className='mr-2' onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
-              <Button onClick={this.onSortDown.bind(this)}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
-              <Card.Title>Sort by distance to Mac</Card.Title>
-              <Button className='mr-2' onClick={() => this.onSortUp("geo")}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
-              <Button onClick={() => this.onSortDown("geo")}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
+              <div className='sort m-2'>
+                <div>
+                  <Card.Title>Sort by ratings</Card.Title>
+                  <Button className='mr-2' onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
+                  <Button onClick={this.onSortDown.bind(this)}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
+                </div>
+                <div>
+                  <Card.Title>Sort by distance to Mac</Card.Title>
+                  <Button className='mr-2' onClick={() => this.onSortUp("geo")}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
+                  <Button onClick={() => this.onSortDown("geo")}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
+                </div>
+              </div>
 
             </Card.Body>
           </Card>
