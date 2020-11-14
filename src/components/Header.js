@@ -11,7 +11,7 @@ import * as actionTypes from "../store/actionTypes"
 class Header extends Component {
     render() {
         return (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark"  fixed="top">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar.Brand href="#home">
                     <img
                         alt=""
@@ -25,17 +25,17 @@ class Header extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home" onSelect={this.props.clickedHome}>Home</Nav.Link>
-                        <Nav.Link href="#browse" onSelect={this.props.clickedBrowse}>Browse</Nav.Link>
-                        <Nav.Link href="#promotions" onSelect={this.props.clickedPromotions}>Promotions</Nav.Link>
-                        <Nav.Link href="#dine-in" onSelect={this.props.clickedDineIn}>Dine In</Nav.Link>
-                        <Nav.Link href="#stories" onSelect={this.props.clickedStories}>Stories</Nav.Link>
+                        <Nav.Link href="/" onSelect={this.props.clickedHome}>Home</Nav.Link>
+                        <Nav.Link href="/browse" onSelect={this.props.clickedBrowse}>Browse</Nav.Link>
+                        <Nav.Link href="/promotions" onSelect={this.props.clickedPromotions}>Promotions</Nav.Link>
+                        <Nav.Link href="/dine-in" onSelect={this.props.clickedDineIn}>Dine In</Nav.Link>
+                        <Nav.Link href="/stories" onSelect={this.props.clickedStories}>Stories</Nav.Link>
                         <NavDropdown title="Accessibility" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#increase-size" className="dropdown">a | A</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav className="nav-right">
-                        <Nav.Link href="#login" className="sign-in" onSelect={this.props.clickedSignIn}>Sign Up / Login</Nav.Link>
+                        <Nav.Link href="/login" className="sign-in" onSelect={this.props.clickedSignIn}>Sign Up / Login</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
