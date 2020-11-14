@@ -10,6 +10,12 @@
     overflow: auto;
 }
 
+.scrollableRestaurantlist {
+    /* Displays 3 restaurants before scrolling needed */
+    max-height: calc(4em * 3);
+    overflow: auto;
+}
+
 .friendPhoto {
     height: 2.5em;
     width: 2.5em;
