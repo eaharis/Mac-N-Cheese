@@ -1,7 +1,7 @@
-import './App.css';
-import Header from './components/Header/Header'
 import { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";import './App.css';
+import Promotions from "./components/Promotions/Promotions";
+import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Menu from "./components/Menu/Menu";
 import Map from './components/Map/Map';
@@ -17,6 +17,7 @@ class App extends Component {
             <Route path="/profile" component={Profile} />
             <Route path="/menu/:restaurant" component={Menu} />
             <Route exact path="/map" component={Map} />
+              <Route exact path="/promotions" component={Promotions} />
             <Route exact path="/" component={Home} />
           </Switch>
         </BrowserRouter>
