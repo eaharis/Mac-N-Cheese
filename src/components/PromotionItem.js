@@ -17,16 +17,14 @@ class promotionItem extends Component {
 
   render() {
     return (
-      <div className="px-5 py-5 text-left media ">
+      <div className="mx-5 px-5 py-5 text-left media ">
         <img
           src={this.state.imgsrc}
           className="photo small align-self-start mr-3 table-dark Aliphoto"
           alt="..."
         />
-        <div className=" pl-2 media-body align-baseline text-light textblock bg-success">
-          <h5 className=" display-4 font-weight-bold text-lg-left mt-0 ">
-            {this.state.text}
-          </h5>
+        <div className="mx-3 pl-2 media-body align-baseline text-light textblock bg-success">
+          <h5 className=" display-4  text-lg-left mt-0 ">{this.state.text}</h5>
 
           {/*<p>{this.state.text}</p>*/}
           <p align={"right"} className={"bg-danger px-5"}>
