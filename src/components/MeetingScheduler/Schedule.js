@@ -379,6 +379,56 @@ const Schedule = [
         endDate: new Date("2020-11-12 5:20 PM"),
         rRule: "FREQ=DAILY"
     },
+
+    // Alan Turing
+    {
+        id: 44,
+        title: "Turing Machine stuff",
+        macId: "turing",
+        startDate: new Date("2020-11-12 9:30 AM"),
+        endDate: new Date("2020-11-12 12:20 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // Alonzo Church
+    {
+        id: 45,
+        title: "Lambda Calculus stuff",
+        macId: "church",
+        startDate: new Date("2020-11-12 9:30 AM"),
+        endDate: new Date("2020-11-12 12:20 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // David Parnas
+    {
+        id: 46,
+        title: "Modular Programming stuff",
+        macId: "parnas",
+        startDate: new Date("2020-11-12 9:30 AM"),
+        endDate: new Date("2020-11-12 12:20 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // Tobey Maguire
+    {
+        id: 47,
+        title: "Spidey stuff",
+        macId: "tobey",
+        startDate: new Date("2020-11-12 9:30 AM"),
+        endDate: new Date("2020-11-12 12:20 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // Jake Johnson
+    {
+        id: 48,
+        title: "Spidey stuff",
+        macId: "jake",
+        startDate: new Date("2020-11-12 9:30 AM"),
+        endDate: new Date("2020-11-12 12:20 PM"),
+        rRule: "FREQ=DAILY"
+    },
 ];
 
 export default Schedule;

@@ -84,7 +84,7 @@ const MeetingScheduler = () => {
                                             </ListGroup.Item>
                                         )}
                                     </div>
-                                    <p class="text-muted" hidden={!numOfFriendSelectionsRemaining}>Select up to {numOfFriendSelectionsRemaining} more friend{numOfFriendSelectionsRemaining > 1 ? "s" : ""} </p>
+                                    <p className="text-muted" hidden={!numOfFriendSelectionsRemaining}>Select up to {numOfFriendSelectionsRemaining} more friend{numOfFriendSelectionsRemaining > 1 ? "s" : ""} </p>
                                 </ListGroup>
 
 
