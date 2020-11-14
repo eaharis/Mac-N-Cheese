@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './Map.css';
+import SearchBox from '../SearchBox/SearchBox';
 
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "react-google-maps";
 import restaurantsData from '../restaurant.data';
@@ -71,13 +72,17 @@ class NewMap extends Component {
 
     this.state = {
       restaurants: restaurantsData,
-      selectedRestaurant: null
+      searchField: ""
     }
   }
 
   distance(p) {
     return Math.round(window.google.maps.geometry.spherical.computeDistanceBetween(new window.google.maps.LatLng(p.geo.lat, p.geo.lng), new window.google.maps.LatLng(MacGeo.lat, MacGeo.lng)));
   }
+
+  handleChange = event => {
+    this.setState({ searchField: event.target.value });
+  };
 
   onSortUp(key = "rating") {
     let sorted;
@@ -135,6 +140,10 @@ class NewMap extends Component {
               <Card.Text style={{ "font-size": "1.5em" }}>
                 Below are a list of all restaurants. All of them would have been displayed on Google Map, but due to development budgets, we are unable to mark them on map.
               </Card.Text>
+              <SearchBox
+                placeholder="search restaurants"
+                handleChange={this.handleChange}
+              />
               <Card.Title>Sort by ratings</Card.Title>
               <Button className='mr-2' onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
               <Button onClick={this.onSortDown.bind(this)}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
@@ -145,7 +154,9 @@ class NewMap extends Component {
             </Card.Body>
           </Card>
           {
-            this.state.restaurants.map(({ id, name, imageUrl, rating }) => (
+            this.state.restaurants
+            .filter(restaurant => restaurant.name.toLowerCase().includes(this.state.searchField.toLowerCase()))
+            .map(({ id, name, imageUrl, rating }) => (
               <div key={id}>
                 <Card className='p-2'>
                   <Row>
