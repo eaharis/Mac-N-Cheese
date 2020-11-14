@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import menuData from '../menu.data';
-import './styling/MenuCategory.css'
+import menuData from './menu.data';
+import './MenuCategory.css'
 
 import Button from "react-bootstrap/Button";
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -66,7 +66,7 @@ class Menu extends Component {
             }}
             rounded
           />
-          <Dropdown as={ButtonGroup}  className='mr-2' >
+          <Dropdown as={ButtonGroup} className='mr-2' >
             <Button variant="success">All Menus</Button>
             <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
             <Dropdown.Menu>
@@ -77,49 +77,49 @@ class Menu extends Component {
               }
             </Dropdown.Menu>
           </Dropdown>
-          <div style={{"font-weight": "bold"}}>Sort by price:</div>
+          <div style={{ "font-weight": "bold" }}>Sort by price:</div>
           <Button className='mr-2' onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
           <Button onClick={this.onSortDown.bind(this)}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
         </div>
-        
+
         <div className='category'>
-        {
-          this.state.menuItems
-          .map(({ name, imageUrl, price, description, id }) => (
-              <div key={id}>
-                <Card  className='p-2' >
-                  <Row>
-                    <Col sm={4}>
-                      <Card.Header>
-                        <Image
-                          src={imageUrl}
-                          style={{
-                            display: "block",
-                            margin: "auto",
-                            width: "13.5vw",
-                            height: "15vh",
-                          }}
-                          rounded
-                        />
-                      </Card.Header>
-                    </Col>
-                    <Col sm={8}>
-                      <Card.Title style={{ "font-size": "1.8em" }}>{name.charAt(0).toUpperCase() + name.slice(1)}</Card.Title>
-                      <Card.Title style={{ "font-size": "1.8em" }}>
-                        Price: <Badge variant="info">$ {price}</Badge>{" "}
-                      </Card.Title>
-                      <Card.Text style={{ "font-size": "1.6em" }}>{description}</Card.Text>
-                    </Col>
-                  </Row>
-                </Card>
-              </div>
-            )
-          )
-        }
-      </div>
+          {
+            this.state.menuItems
+              .map(({ name, imageUrl, price, description, id }) => (
+                <div key={id}>
+                  <Card className='p-2' >
+                    <Row>
+                      <Col sm={4}>
+                        <Card.Header>
+                          <Image
+                            src={imageUrl}
+                            style={{
+                              display: "block",
+                              margin: "auto",
+                              width: "13.5vw",
+                              height: "15vh",
+                            }}
+                            rounded
+                          />
+                        </Card.Header>
+                      </Col>
+                      <Col sm={8}>
+                        <Card.Title style={{ "font-size": "1.8em" }}>{name.charAt(0).toUpperCase() + name.slice(1)}</Card.Title>
+                        <Card.Title style={{ "font-size": "1.8em" }}>
+                          Price: <Badge variant="info">$ {price}</Badge>{" "}
+                        </Card.Title>
+                        <Card.Text style={{ "font-size": "1.6em" }}>{description}</Card.Text>
+                      </Col>
+                    </Row>
+                  </Card>
+                </div>
+              )
+              )
+          }
+        </div>
 
       </div>
-    ) 
+    )
   }
 }
 

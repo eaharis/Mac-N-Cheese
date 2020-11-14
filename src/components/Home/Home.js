@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import restaurantsData from '../restaurant.data';
-import './styling/Home.css';
+import './Home.css';
 
 import Card from 'react-bootstrap/Card'
 import Badge from "react-bootstrap/Badge";
@@ -25,7 +25,7 @@ class Home extends Component {
         </h1>
         <div className='preview'>
           {
-            this.state.restaurants.map(({name, imageUrl, rating}) => (
+            this.state.restaurants.map(({ name, imageUrl, rating }) => (
               <Card className='m-1' style={{ width: '23rem' }}>
                 <Card.Header>
                   <Image

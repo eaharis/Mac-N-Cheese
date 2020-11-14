@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class profile extends Component {
+class menuItem extends Component {
 
 }
 
-export default connect()(profile);
+export default connect()(menuItem);

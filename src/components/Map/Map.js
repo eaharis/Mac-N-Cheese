@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './styling/Map.css';
+import './Map.css';
 
-import {GoogleMap, withScriptjs, withGoogleMap} from "react-google-maps";
+import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 import restaurantsData from '../restaurant.data';
 import Card from 'react-bootstrap/Card'
 import Col from "react-bootstrap/Col";
@@ -40,7 +40,7 @@ class Map extends Component {
   }
 
   Map() {
-    return <GoogleMap defaultZoom={15} defaultCenter={{lat: 43.2609, lng: -79.9192}} />
+    return <GoogleMap defaultZoom={15} defaultCenter={{ lat: 43.2609, lng: -79.9192 }} />
   }
 
   WrappedMap = withScriptjs(withGoogleMap(this.Map));
@@ -50,25 +50,25 @@ class Map extends Component {
       <div className='map-container'>
         <div style={{ width: "50vw", height: "100vh" }} className='map'>
           <this.WrappedMap googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `100%` }} />}
-          mapElement={<div style={{ height: `100%` }} />} />
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `100%` }} />}
+            mapElement={<div style={{ height: `100%` }} />} />
         </div>
         <div className='category'>
           <Card border="primary">
             <Card.Header style={{ "font-size": "1.8em" }}>All Restaurants</Card.Header>
             <Card.Body>
               <Card.Text style={{ "font-size": "1.5em" }}>
-                Below are a list of all restaurants. All of them would have been displayed on Google Map, but due to development budgets, we are unable to mark them on map. 
+                Below are a list of all restaurants. All of them would have been displayed on Google Map, but due to development budgets, we are unable to mark them on map.
               </Card.Text>
               <Card.Title>Sort by ratings</Card.Title>
-              <Button className='mr-2'  onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
+              <Button className='mr-2' onClick={this.onSortUp.bind(this)}>ascending <FontAwesomeIcon icon={faSortUp} /></Button>
               <Button onClick={this.onSortDown.bind(this)}>descending <FontAwesomeIcon icon={faSortDown} /></Button>
 
             </Card.Body>
           </Card>
-        {
-          this.state.restaurants.map(({id, name, imageUrl, rating}) => (
+          {
+            this.state.restaurants.map(({ id, name, imageUrl, rating }) => (
               <div key={id}>
                 <Card className='p-2'>
                   <Row>
@@ -104,8 +104,8 @@ class Map extends Component {
                 </Card>
               </div>
             )
-          )
-        }
+            )
+          }
         </div>
       </div>
     )
