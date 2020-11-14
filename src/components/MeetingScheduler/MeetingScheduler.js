@@ -19,38 +19,6 @@ import { Container, Card, Row, Col, ListGroup, DropdownButton, Form } from 'reac
 
 
 const MeetingScheduler = () => {
-    const appointments = [
-        {
-            id: 1,
-            title: "COMPSCI 4HC3",
-            macId: "bucklj4",
-            startDate: new Date(2017, 4, 28, 12, 30),
-            endDate: new Date(2017, 4, 28, 14, 30),
-            rRule: "FREQ=DAILY"
-        },
-        {
-            id: 2,
-            title: "COMPSCI 4O03",
-            macId: "declan",
-            startDate: new Date(2017, 4, 28, 13, 30),
-            endDate: new Date(2017, 4, 28, 15, 30),
-        },
-        {
-            id: 3,
-            title: "COMPSCI 4HC3",
-            macId: "xxx",
-            startDate: new Date(2017, 4, 28, 12, 30),
-            endDate: new Date(2017, 4, 28, 14, 30),
-        },
-        {
-            id: 4,
-            title: "COMPSCI 4O03",
-            macId: "declan",
-            startDate: new Date(2017, 4, 28, 13, 30),
-            endDate: new Date(2017, 4, 28, 15, 30),
-        }
-    ];
-
     const owners = [
         {
             text: 'Me',
