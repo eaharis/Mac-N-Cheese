@@ -47,10 +47,10 @@ const MeetingScheduler = () => {
     const restaurantSearcher = new FuzzySearch(restaurants, ["name"]);
     const restaurantsToShow = restaurantSearcher.search(searchedRestaurant);
 
-    // Select n
-    const flipFriendActiveStatus = (macId) => {
+    // Select up to a max
+    const flipFriendActiveStatus = (name) => {
         setFriends(
-            friends.map(friend => friend.macId === macId && ((!friend.active && numOfFriendSelectionsRemaining) || friend.active)
+            friends.map(friend => friend.name === name && ((!friend.active && numOfFriendSelectionsRemaining) || friend.active)
                 ? { ...friend, active: !friend.active }
                 : friend
             )
@@ -58,9 +58,9 @@ const MeetingScheduler = () => {
     };
 
     // Select only 1
-    const flipRestaurantActiveStatus = (macId) => {
+    const flipRestaurantActiveStatus = (name) => {
         setRestaurants(
-            restaurants.map(restaurant => restaurant.macId === macId
+            restaurants.map(restaurant => restaurant.name === name
                 ? { ...restaurant, active: !restaurant.active }
                 : { ...restaurant, active: false }
             )
@@ -71,14 +71,14 @@ const MeetingScheduler = () => {
         [
             {
                 text: 'Me',
-                id: 'bucklj4',
+                id: 'Jack Buckley',
                 color: indigo
             }
         ].concat(
             selectedFriends.map((friend, i) => (
                 {
                     text: friend.name,
-                    id: friend.macId,
+                    id: friend.name,
                     color: friendColours[i]
                 }
             ))
@@ -86,12 +86,12 @@ const MeetingScheduler = () => {
             [
                 {
                     text: 'Restaurant',
-                    id: 'restaurant',
+                    id: 'Restaurant',
                     color: red
                 },
                 {
                     text: 'Suggestion',
-                    id: 'suggestion',
+                    id: 'Suggestion',
                     color: green
                 }
             ]
@@ -111,7 +111,7 @@ const MeetingScheduler = () => {
                                     </ListGroup.Item>
                                     <div className="scrollableFriendlist">
                                         {friendsToShow.map(friend =>
-                                            <ListGroup.Item key={friend.macId} active={friend.active} onClick={() => flipFriendActiveStatus(friend.macId)} className="d-flex justify-content-between align-items-center flex-wrap clickable">
+                                            <ListGroup.Item key={friend.name} active={friend.active} onClick={() => flipFriendActiveStatus(friend.name)} className="d-flex justify-content-between align-items-center flex-wrap clickable">
                                                 <h6 className="mb-0 font-weight-bold"><img src={friend.image} className="friendPhoto rounded-circle mr-2" />{friend.name}</h6>
                                             </ListGroup.Item>
                                         )}
@@ -128,7 +128,7 @@ const MeetingScheduler = () => {
                                     </ListGroup.Item>
                                     <div className="scrollableRestaurantlist">
                                         {restaurantsToShow.map(restaurant =>
-                                            <ListGroup.Item key={restaurant.macId} active={restaurant.active} onClick={() => flipRestaurantActiveStatus(restaurant.macId)} className="d-flex justify-content-between align-items-center flex-wrap clickable">
+                                            <ListGroup.Item key={restaurant.name} active={restaurant.active} onClick={() => flipRestaurantActiveStatus(restaurant.name)} className="d-flex justify-content-between align-items-center flex-wrap clickable">
                                                 <h6 className="mb-0 font-weight-bold"><img src={restaurant.image} className="friendPhoto rounded-circle mr-2" />{restaurant.name}</h6>
                                             </ListGroup.Item>
                                         )}
@@ -151,11 +151,11 @@ const MeetingScheduler = () => {
                             />
                             <DayView startDayHour={9} />
                             <GroupingState grouping={[
-                                { resourceName: "macId" }
+                                { resourceName: "name" }
                             ]} />
                             <Appointments />
                             <Resources data={[{
-                                fieldName: 'macId',
+                                fieldName: 'name',
                                 instances: calendarColumns
                             }]} />
                             <IntegratedGrouping />
