@@ -359,17 +359,6 @@ const Schedule = [
         rRule: "FREQ=WEEKLY"
     },
 
-
-    // Restaurant
-    {
-        id: 42,
-        title: "Restaurant",
-        macId: "restaurant",
-        startDate: new Date("2020-11-12 3:30 PM"),
-        endDate: new Date("2020-11-12 4:20 PM"),
-        rRule: "FREQ=DAILY"
-    },
-
     // Suggestion
     {
         id: 43,
@@ -427,6 +416,66 @@ const Schedule = [
         name: "Jake Johnson",
         startDate: new Date("2020-11-12 9:30 AM"),
         endDate: new Date("2020-11-12 12:20 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // Pinks
+    {
+        id: 49,
+        title: "Usually busy",
+        name: "Pinks",
+        startDate: new Date("2020-11-12 11:30 AM"),
+        endDate: new Date("2020-11-12 1:30 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // Quik Chik
+    {
+        id: 50,
+        title: "Usually busy",
+        name: "Quik Chik",
+        startDate: new Date("2020-11-12 11:30 AM"),
+        endDate: new Date("2020-11-12 1:30 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // Burrito Banditos
+    {
+        id: 51,
+        title: "Usually busy",
+        name: "Burrito Banditos",
+        startDate: new Date("2020-11-12 11:30 AM"),
+        endDate: new Date("2020-11-12 1:30 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // Subway
+    {
+        id: 52,
+        title: "Usually busy",
+        name: "Subway",
+        startDate: new Date("2020-11-12 11:30 AM"),
+        endDate: new Date("2020-11-12 1:30 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // McDonald's
+    {
+        id: 53,
+        title: "Usually busy",
+        name: "McDonald's",
+        startDate: new Date("2020-11-12 11:30 AM"),
+        endDate: new Date("2020-11-12 1:30 PM"),
+        rRule: "FREQ=DAILY"
+    },
+
+    // Tim Hortons
+    {
+        id: 54,
+        title: "Usually busy",
+        name: "Tim Hortons",
+        startDate: new Date("2020-11-12 11:30 AM"),
+        endDate: new Date("2020-11-12 1:30 PM"),
         rRule: "FREQ=DAILY"
     },
 ];

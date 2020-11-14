@@ -83,12 +83,15 @@ const MeetingScheduler = () => {
                 }
             ))
         ).concat(
-            [
+            selectedRestaurants.map((restaurant, i) => (
                 {
-                    text: 'Restaurant',
-                    id: 'Restaurant',
+                    text: restaurant.name,
+                    id: restaurant.name,
                     color: red
-                },
+                }
+            ))
+        ).concat(
+            [
                 {
                     text: 'Suggestion',
                     id: 'Suggestion',
