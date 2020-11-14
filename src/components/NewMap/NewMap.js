@@ -133,7 +133,7 @@ class NewMap extends Component {
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />} />
         </div>
-        <div className='category'>
+        <div className='category m-1'>
           <Card border="primary">
             <Card.Header style={{ "font-size": "1.8em" }}>All Restaurants</Card.Header>
             <Card.Body>
@@ -153,47 +153,49 @@ class NewMap extends Component {
 
             </Card.Body>
           </Card>
-          {
-            this.state.restaurants
-            .filter(restaurant => restaurant.name.toLowerCase().includes(this.state.searchField.toLowerCase()))
-            .map(({ id, name, imageUrl, rating }) => (
-              <div key={id}>
-                <Card className='p-2'>
-                  <Row>
-                    <Col sm={4}>
-                      <Card.Header>
-                        <Image
-                          src={imageUrl}
-                          style={{
-                            display: "block",
-                            margin: "auto",
-                            width: "13vw",
-                            height: "15vh",
-                          }}
-                          rounded
+          <div className='cards'>
+            {
+              this.state.restaurants
+              .filter(restaurant => restaurant.name.toLowerCase().includes(this.state.searchField.toLowerCase()))
+              .map(({ id, name, imageUrl, rating }) => (
+                <div key={id}>
+                  <Card className='p-2'>
+                    <Row>
+                      <Col sm={4}>
+                        <Card.Header>
+                          <Image
+                            src={imageUrl}
+                            style={{
+                              display: "block",
+                              margin: "auto",
+                              width: "13vw",
+                              height: "15vh",
+                            }}
+                            rounded
+                          />
+                        </Card.Header>
+                      </Col>
+                      <Col sm={8}>
+                        <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
+                        <Card.Title style={{ "font-size": "1.8em" }}>
+                          Rating: <Badge variant="info">{rating}</Badge>{" "}
+                        </Card.Title>
+                        <StarRatings
+                          rating={rating}
+                          starDimension="1.8em"
+                          starRatedColor="green"
+                          numberOfStars={5}
+                          starSpacing='1px'
+                          name='rating'
                         />
-                      </Card.Header>
-                    </Col>
-                    <Col sm={8}>
-                      <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
-                      <Card.Title style={{ "font-size": "1.8em" }}>
-                        Rating: <Badge variant="info">{rating}</Badge>{" "}
-                      </Card.Title>
-                      <StarRatings
-                        rating={rating}
-                        starDimension="1.8em"
-                        starRatedColor="green"
-                        numberOfStars={5}
-                        starSpacing='1px'
-                        name='rating'
-                      />
-                    </Col>
-                  </Row>
-                </Card>
-              </div>
-            )
-            )
-          }
+                      </Col>
+                    </Row>
+                  </Card>
+                </div>
+              )
+              )
+            }
+          </div>
         </div>
       </div>
     )
