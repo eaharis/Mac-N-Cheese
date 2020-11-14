@@ -6,6 +6,7 @@ import Profile from './components/Profile/Profile';
 import Menu from "./components/Menu/Menu";
 import Map from './components/Map/Map';
 import Home from './components/Home/Home';
+import NewMap from './components/NewMap/NewMap';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route path="/profile" component={Profile} />
             <Route path="/menu/:restaurant" component={Menu} />
             <Route exact path="/map" component={Map} />
+            <Route exact path="/newmap" component={NewMap} />
             <Route exact path="/" component={Home} />
           </Switch>
         </BrowserRouter>
