@@ -12,6 +12,8 @@ import {
     TodayButton,
     DayView,
     GroupingPanel,
+    AppointmentTooltip,
+    AppointmentForm,
 } from '@devexpress/dx-react-scheduler-material-ui';
 import Schedule from "./Schedule";
 import "./MeetingScheduler.css"
@@ -180,14 +182,14 @@ const MeetingScheduler = () => {
                                     <ViewState
                                         // Today
                                         defaultCurrentDate={new Date()}
-                                        startDate="2020-11-12"
-                                        endDate="2020-11-13"
                                     />
-                                    <DayView startDayHour={9} />
+                                    <DayView startDayHour={8} endDayHour={18} />
                                     <GroupingState grouping={[
                                         { resourceName: "name" }
                                     ]} />
                                     <Appointments />
+                                    <AppointmentTooltip />
+                                    <AppointmentForm />
                                     <Resources data={[{
                                         fieldName: 'name',
                                         instances: calendarColumns

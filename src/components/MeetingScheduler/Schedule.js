@@ -374,8 +374,8 @@ const Schedule = [
         id: 44,
         title: "Turing Machine stuff",
         name: "Alan Turing",
-        startDate: new Date("2020-11-12 9:30 AM"),
-        endDate: new Date("2020-11-12 12:20 PM"),
+        startDate: new Date("2020-11-12 8:30 AM"),
+        endDate: new Date("2020-11-12 9:20 AM"),
         rRule: "FREQ=DAILY"
     },
 
@@ -384,8 +384,8 @@ const Schedule = [
         id: 45,
         title: "Lambda Calculus stuff",
         name: "Alonzo Church",
-        startDate: new Date("2020-11-12 9:30 AM"),
-        endDate: new Date("2020-11-12 12:20 PM"),
+        startDate: new Date("2020-11-12 8:30 AM"),
+        endDate: new Date("2020-11-12 9:20 AM"),
         rRule: "FREQ=DAILY"
     },
 
@@ -394,8 +394,8 @@ const Schedule = [
         id: 46,
         title: "Modular Programming stuff",
         name: "David Parnas",
-        startDate: new Date("2020-11-12 9:30 AM"),
-        endDate: new Date("2020-11-12 12:20 PM"),
+        startDate: new Date("2020-11-12 8:30 AM"),
+        endDate: new Date("2020-11-12 9:20 AM"),
         rRule: "FREQ=DAILY"
     },
 
@@ -404,8 +404,8 @@ const Schedule = [
         id: 47,
         title: "Spidey stuff",
         name: "Tobey Maguire",
-        startDate: new Date("2020-11-12 9:30 AM"),
-        endDate: new Date("2020-11-12 12:20 PM"),
+        startDate: new Date("2020-11-12 8:30 AM"),
+        endDate: new Date("2020-11-12 9:20 AM"),
         rRule: "FREQ=DAILY"
     },
 
@@ -414,8 +414,8 @@ const Schedule = [
         id: 48,
         title: "Spidey stuff",
         name: "Jake Johnson",
-        startDate: new Date("2020-11-12 9:30 AM"),
-        endDate: new Date("2020-11-12 12:20 PM"),
+        startDate: new Date("2020-11-12 8:30 AM"),
+        endDate: new Date("2020-11-12 9:20 AM"),
         rRule: "FREQ=DAILY"
     },
 
