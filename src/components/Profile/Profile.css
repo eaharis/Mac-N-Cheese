@@ -1,0 +1,51 @@
+.profilePicture {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.profilePicture img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px; 
+}
+  
+.profilePicture:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.slider {
+    margin-left: 1em;
+}
+
+div#freq {
+    width: 90%;
+}
+
+#freq .slider-selection.tick-slider-selection {
+    background: #ffc107;
+}
+
+.slider-selection.tick-slider-selection {
+    background: #ffc107;
+}
+
+.slider-selection.tick-slider-selection {
+    background: #ffc107 !important;
+}
+
+.slider-tick.in-selection {
+    background: #ffc107 !important;
+}
+
+.slider-handle.round {
+    background: #ffc107;
+}
+
+.Profile {
+    text-align: left;
+}
