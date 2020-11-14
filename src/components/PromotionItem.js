@@ -27,11 +27,14 @@ class promotionItem extends Component {
           <h5 className=" display-4 font-weight-bold text-lg-left mt-0 ">
             {this.state.text}
           </h5>
+
           {/*<p>{this.state.text}</p>*/}
           <p align={"right"} className={"bg-danger px-5"}>
             {" "}
             Expiry date in {this.state.expiry}
           </p>
+
+          {/*<a className="stretched-link">Go somewhere</a>*/}
         </div>
       </div>
     );

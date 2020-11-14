@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PromotionItem from "./PromotionItem";
-import { Dropdown } from "react-bootstrap";
+import { Button, Dropdown } from "react-bootstrap";
 
 class promotions extends Component {
   state = {};
@@ -127,6 +127,7 @@ class promotions extends Component {
           expiry: "4 weeks",
         },
       ].reverse(),
+      clickedPromo: false,
       // currpromos: [],
     };
 
@@ -149,49 +150,136 @@ class promotions extends Component {
       this.setState({ currpromos: this.state.reversedpromos });
     }
   };
+  newPromo = () => {
+    this.setState({ clickedPromo: true });
+  };
   render() {
-    return (
-      <React.Fragment>
-        <div className={"bg-dark pb-2"}>
-          <h1 className={"display-1 text-success"}>Promotions!</h1>
-          <Dropdown className={"text-right px-2"}>
-            <Dropdown.Toggle
-              className={"text-light"}
-              variant="success"
-              id="dropdown-basic"
-            >
-              Sort by:
-            </Dropdown.Toggle>
+    if (this.state.clickedPromo) {
+      return (
+        <React.Fragment>
+          <div className={"bg-dark pb-2"}>
+            <h1 className={"display-1 text-success"}>Promotions!</h1>
 
-            <Dropdown.Menu>
-              <Dropdown.Item
-                href="#sorted"
-                onClick={() => this.changeOrder("sort")}
+            <Dropdown className={"text-right px-2"}>
+              <Dropdown.Toggle
+                className={"text-dark"}
+                variant="success"
+                id="dropdown-basic"
               >
-                Earlier expiry dates first
-              </Dropdown.Item>
-              <Dropdown.Item
-                href="#reversed"
-                onClick={() => this.changeOrder("reverse")}
+                Sort by:
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  href="#sorted"
+                  onClick={() => this.changeOrder("sort")}
+                >
+                  Earlier expiry dates first
+                </Dropdown.Item>
+                <Dropdown.Item
+                  href="#reversed"
+                  onClick={() => this.changeOrder("reverse")}
+                >
+                  Earlier expiry dates last
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          <Button
+            type={"button"}
+            class="btn btn-primary"
+            className={"float-right text-light mx-2 my-2"}
+            variant="primary "
+            onClick={this.newPromo}
+          >
+            Submit a link to a new promotion
+          </Button>{" "}
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <span
+                className="input-group-text text-bg-light "
+                id="basic-addon1"
               >
-                Earlier expiry dates last
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
-        <div>
-          {this.state.currpromos.map((promo) => (
-            <PromotionItem
-              text={promo.title}
-              id={promo.order}
-              key={promo.order}
-              imgsrc={promo.imgsrc}
-              expiry={promo.expiry}
+                Enter URL to food promotion:
+              </span>
+            </div>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="URL"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
             />
-          ))}
-        </div>
-      </React.Fragment>
-    );
+          </div>
+          <div className={"py-5"}> </div>
+          <div>
+            {this.state.currpromos.map((promo) => (
+              <PromotionItem
+                text={promo.title}
+                id={promo.order}
+                key={promo.order}
+                imgsrc={promo.imgsrc}
+                expiry={promo.expiry}
+              />
+            ))}
+          </div>
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <div className={"bg-dark pb-2"}>
+            <h1 className={"display-1 text-success"}>Promotions!</h1>
+
+            <Dropdown className={"text-right px-2"}>
+              <Dropdown.Toggle
+                className={"text-dark"}
+                variant="success"
+                id="dropdown-basic"
+              >
+                Sort by:
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  href="#sorted"
+                  onClick={() => this.changeOrder("sort")}
+                >
+                  Earlier expiry dates first
+                </Dropdown.Item>
+                <Dropdown.Item
+                  href="#reversed"
+                  onClick={() => this.changeOrder("reverse")}
+                >
+                  Earlier expiry dates last
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
+          <Button
+            type={"button"}
+            class="btn btn-primary"
+            className={"float-right text-light mx-2 my-2"}
+            variant="primary "
+            onClick={this.newPromo}
+          >
+            Submit a link to a new promotion
+          </Button>{" "}
+          <div className={"py-5"}> </div>
+          <div>
+            {this.state.currpromos.map((promo) => (
+              <PromotionItem
+                text={promo.title}
+                id={promo.order}
+                key={promo.order}
+                imgsrc={promo.imgsrc}
+                expiry={promo.expiry}
+              />
+            ))}
+          </div>
+        </React.Fragment>
+      );
+    }
   }
 }
 
