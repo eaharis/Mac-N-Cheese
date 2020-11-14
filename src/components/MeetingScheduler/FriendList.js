@@ -1,7 +1,7 @@
 const friendList = [
     {
         name: "Declan Wu",
-        macId: "wu92",
+        macId: "wus92",
         image: "https://www.famousbirthdays.com/faces/bell-drake-image.jpg",
         active: true
     },

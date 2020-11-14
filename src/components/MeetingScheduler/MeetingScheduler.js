@@ -1,4 +1,7 @@
 import * as React from 'react';
+import {
+    teal, indigo, red, orange, green
+} from '@material-ui/core/colors';
 import Paper from '@material-ui/core/Paper';
 import { ViewState, GroupingState, IntegratedGrouping, Resources } from '@devexpress/dx-react-scheduler';
 import {
@@ -10,7 +13,7 @@ import {
     DayView,
     GroupingPanel,
 } from '@devexpress/dx-react-scheduler-material-ui';
-import { Schedule, owners } from "./Schedule";
+import Schedule from "./Schedule";
 import "./MeetingScheduler.css"
 import { Container, Card, Row, Col, ListGroup, DropdownButton, Form } from 'react-bootstrap';
 import initialFriendList from './FriendList';
@@ -21,18 +24,51 @@ const MeetingScheduler = () => {
 
     const flipFriendActiveStatus = (macId) => {
         setFriends(
-            friends.map(friend => friend.macId === macId
+            friends.map(friend => friend.macId === macId && ((!friend.active && numOfFriendSelectionsRemaining) || friend.active)
                 ? { ...friend, active: !friend.active }
                 : friend
             )
         );
-    }
+    };
 
+    const MAX_SELECTED_FRIENDS = 3;
+    const selectedFriends = friends.filter(friend => friend.active);
+    const numOfFriendSelectionsRemaining = MAX_SELECTED_FRIENDS - selectedFriends.length;
+
+    const calendarColumns =
+        [
+            {
+                text: 'Me',
+                id: 'bucklj4',
+                color: indigo
+            }
+        ].concat(
+            selectedFriends.map(friend => (
+                {
+                    text: friend.name,
+                    id: friend.macId,
+                    color: red
+                }
+            ))
+        ).concat(
+            [
+                {
+                    text: 'Restaurant',
+                    id: 'restaurant',
+                    color: red
+                },
+                {
+                    text: 'Suggestion',
+                    id: 'suggestion',
+                    color: green
+                }
+            ]
+        );
 
     return (
-        <Container className="Profile">
+        <Container fluid>
             <Row>
-                <Col md={4} className="mb-3">
+                <Col md={3} className="mb-3">
                     <Card>
                         <Card.Body className="card-body">
                             <h4>1. Choose your friends</h4>
@@ -48,6 +84,7 @@ const MeetingScheduler = () => {
                                             </ListGroup.Item>
                                         )}
                                     </div>
+                                    <p class="text-muted" hidden={!numOfFriendSelectionsRemaining}>Select up to {numOfFriendSelectionsRemaining} more friend{numOfFriendSelectionsRemaining > 1 ? "s" : ""} </p>
                                 </ListGroup>
 
 
@@ -55,7 +92,7 @@ const MeetingScheduler = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col md={8}>
+                <Col md={9}>
                     <Paper>
                         {/* TODO: Don't allow dates in the past to be picked */}
                         <Scheduler data={Schedule} min={new Date(2020, 11, 3)} startDate="2020-11-12" endDate="2020-11-13">
@@ -72,7 +109,7 @@ const MeetingScheduler = () => {
                             <Appointments />
                             <Resources data={[{
                                 fieldName: 'macId',
-                                instances: owners
+                                instances: calendarColumns
                             }]} />
                             <IntegratedGrouping />
                             <GroupingPanel />

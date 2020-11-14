@@ -1,35 +1,3 @@
-import {
-    teal, indigo, red, orange, green
-} from '@material-ui/core/colors';
-
-const owners = [
-    {
-        text: 'Me',
-        id: 'bucklj4',
-        color: indigo
-    },
-    {
-        text: 'Declan Wu',
-        id: 'wus92',
-        color: teal
-    },
-    {
-        text: 'Esam Haris',
-        id: 'harise',
-        color: orange
-    },
-    {
-        text: 'Restaurant',
-        id: 'restaurant',
-        color: red
-    },
-    {
-        text: 'Suggestion',
-        id: 'suggestion',
-        color: green
-    }
-];
-
 const Schedule = [
     // Declan's schedule
     // Monday
@@ -413,4 +381,4 @@ const Schedule = [
     },
 ];
 
-export { owners, Schedule };
+export default Schedule;
