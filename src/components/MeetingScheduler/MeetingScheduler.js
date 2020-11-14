@@ -17,10 +17,12 @@ import Schedule from "./Schedule";
 import "./MeetingScheduler.css"
 import { Container, Card, Row, Col, ListGroup, DropdownButton, Form } from 'react-bootstrap';
 import initialFriendList from './FriendList';
+import FuzzySearch from 'fuzzy-search';
 
 
 const MeetingScheduler = () => {
     const [friends, setFriends] = React.useState(initialFriendList);
+    const [searchedFriend, setSearchedFriend] = React.useState("");
 
     const flipFriendActiveStatus = (macId) => {
         setFriends(
@@ -38,7 +40,10 @@ const MeetingScheduler = () => {
         ? `Select up to ${numOfFriendSelectionsRemaining} more friend${numOfFriendSelectionsRemaining > 1 ? "s" : ""}`
         : "Unselect a friend to select another";
 
-    const friendColours = [blue, orange, purple]
+    const friendColours = [blue, orange, purple];
+
+    const friendSearcher = new FuzzySearch(friends, ["name"]);
+    const friendsToShow = friendSearcher.search(searchedFriend);
 
     const calendarColumns =
         [
@@ -80,10 +85,10 @@ const MeetingScheduler = () => {
                             <Card className="mt-3 h-75">
                                 <ListGroup variant="flush">
                                     <ListGroup.Item className="d-flex justify-content-between align-items-center flex-wrap">
-                                        <Form.Control variant="text" placeholder="Search friends..." />
+                                        <Form.Control variant="text" placeholder="Search friends..." value={searchedFriend} onChange={(e) => setSearchedFriend(e.target.value)} />
                                     </ListGroup.Item>
                                     <div className="scrollableFriendlist">
-                                        {friends.map(friend =>
+                                        {friendsToShow.map(friend =>
                                             <ListGroup.Item key={friend.macId} active={friend.active} onClick={() => flipFriendActiveStatus(friend.macId)} className="d-flex justify-content-between align-items-center flex-wrap clickable">
                                                 <h6 className="mb-0 font-weight-bold"><img src={friend.image} className="friendPhoto rounded-circle mr-2" />{friend.name}</h6>
                                             </ListGroup.Item>
