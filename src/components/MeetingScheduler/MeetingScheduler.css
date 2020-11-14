@@ -6,7 +6,7 @@
 
 .scrollableFriendlist {
     /* Displays 5 friends before scrolling needed */
-    height: calc(4em * 5);
+    max-height: calc(4em * 5);
     overflow: auto;
 }
 
