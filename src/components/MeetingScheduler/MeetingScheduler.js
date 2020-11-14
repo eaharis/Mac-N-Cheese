@@ -19,6 +19,9 @@ import { Container, Card, Row, Col, ListGroup, DropdownButton, Form } from 'reac
 import initialFriendList from './FriendList';
 import FuzzySearch from 'fuzzy-search';
 import initialRestaurantList from './Restaurants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
+import { faUserFriends, faHourglassHalf } from '@fortawesome/free-solid-svg-icons';
 
 
 const MeetingScheduler = () => {
@@ -105,7 +108,7 @@ const MeetingScheduler = () => {
             <Row>
                 <Col md={3} className="mb-3">
                     <Card>
-                        <Card.Body className="card-body">
+                        <Card.Body>
                             <h4>1. Choose your friends</h4>
                             <Card className="mt-3 h-75">
                                 <ListGroup variant="flush">
@@ -143,32 +146,62 @@ const MeetingScheduler = () => {
                     </Card>
                 </Col>
                 <Col md={9}>
-                    <Paper>
-                        {/* TODO: Don't allow dates in the past to be picked */}
-                        <Scheduler data={Schedule} min={new Date(2020, 11, 3)} startDate="2020-11-12" endDate="2020-11-13">
-                            <ViewState
-                                // Today
-                                defaultCurrentDate={new Date()}
-                                startDate="2020-11-12"
-                                endDate="2020-11-13"
-                            />
-                            <DayView startDayHour={9} />
-                            <GroupingState grouping={[
-                                { resourceName: "name" }
-                            ]} />
-                            <Appointments />
-                            <Resources data={[{
-                                fieldName: 'name',
-                                instances: calendarColumns
-                            }]} />
-                            <IntegratedGrouping />
-                            <GroupingPanel />
-                            <Toolbar />
-                            <DateNavigator min="2020-08-12" />
-                            <TodayButton />
+                    <Card>
+                        <Card.Body>
+                            <h4>3. Select a time</h4>
+                            <Form.Row>
+                                <Col md={4}>
+                                    <Form.Label className="font-weight-bold"><FontAwesomeIcon icon={faCalendarAlt} /> Search Period</Form.Label>
+                                    <Form.Control as="select">
+                                        <option>Sometime today</option>
+                                        <option>Within 3 days</option>
+                                        <option>Within a week</option>
+                                    </Form.Control>
+                                </Col>
+                                <Col md={4}>
+                                    <Form.Label className="font-weight-bold"><FontAwesomeIcon icon={faUserFriends} />  Availability</Form.Label>
+                                    <Form.Control as="select">
+                                        <option>All people available</option>
+                                        <option>At least 2 people available</option>
+                                    </Form.Control>
+                                </Col>
+                                <Col md={4}>
+                                    <Form.Label className="font-weight-bold"><FontAwesomeIcon icon={faHourglassHalf} /> Eating Duration</Form.Label>
+                                    <Form.Control as="select">
+                                        <option>30 minutes</option>
+                                        <option>1 hour</option>
+                                    </Form.Control>
+                                </Col>
+                            </Form.Row>
+                            <hr />
+                            <Paper>
+                                {/* TODO: Don't allow dates in the past to be picked */}
+                                <Scheduler data={Schedule} min={new Date(2020, 11, 3)} startDate="2020-11-12" endDate="2020-11-13">
+                                    <ViewState
+                                        // Today
+                                        defaultCurrentDate={new Date()}
+                                        startDate="2020-11-12"
+                                        endDate="2020-11-13"
+                                    />
+                                    <DayView startDayHour={9} />
+                                    <GroupingState grouping={[
+                                        { resourceName: "name" }
+                                    ]} />
+                                    <Appointments />
+                                    <Resources data={[{
+                                        fieldName: 'name',
+                                        instances: calendarColumns
+                                    }]} />
+                                    <IntegratedGrouping />
+                                    <GroupingPanel />
+                                    <Toolbar />
+                                    <DateNavigator min="2020-08-12" />
+                                    <TodayButton />
 
-                        </Scheduler>
-                    </Paper>
+                                </Scheduler>
+                            </Paper>
+                        </Card.Body>
+                    </Card>
                 </Col>
             </Row>
         </Container >
