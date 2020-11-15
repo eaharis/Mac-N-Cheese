@@ -359,15 +359,6 @@ const Schedule = [
         rRule: "FREQ=WEEKLY"
     },
 
-    // Suggestion
-    {
-        id: 43,
-        title: "Suggestion",
-        name: "Suggestion",
-        startDate: new Date("2020-11-12 4:30 PM"),
-        endDate: new Date("2020-11-12 5:20 PM"),
-        rRule: "FREQ=DAILY"
-    },
 
     // Alan Turing
     {
