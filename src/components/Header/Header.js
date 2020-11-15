@@ -6,9 +6,11 @@ import { connect } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from  'react-bootstrap/NavDropdown'
-import Form from 'react-bootstrap'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
 import * as actionTypes from "../../store/actionTypes"
 import * as pages from '../../store/pageNames';
+import FontSizeChanger from 'react-font-size-changer';
 
 class Header extends Component {
     render() {
@@ -34,7 +36,16 @@ class Header extends Component {
                         <Nav.Link href={pages.STORIES} onSelect={this.props.clickedStories}>Stories</Nav.Link>
 
                         <NavDropdown title="Accessibility" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#increase-size" className="dropdown">a | A</NavDropdown.Item>
+                            <NavDropdown.Item href="#increase-size" className="dropdown">
+                                <FontSizeChanger
+                                    targets={['body']}
+                                    options={{
+                                        stepSize: 2,
+                                        range: 3
+                                    }}
+                                />
+                            </NavDropdown.Item>
+
                         </NavDropdown>
                     </Nav>
                     <Nav className="nav-right">
