@@ -3,6 +3,7 @@ import { Rating } from '@material-ui/lab';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Button from "react-bootstrap/Button";
+import TagInput from "../TagInput/TagInput";
 
 function WriteReview() {
     const [show, setShow] = React.useState(false);
@@ -44,7 +45,17 @@ function WriteReview() {
                         </Form.Group>
                         <Form.Group controlId="formBasicPassword">
                             <Form.Label>Tags</Form.Label>
-                            <Form.Control placeholder="Enter tags such as 'Great Service'" />
+                            <TagInput placeholder="Enter tags such as 'Great Service'" whitelist={
+                                [
+                                    { value: "Great Service" },
+                                    { value: "Friendly Staff" },
+                                    { value: "Tasty" },
+                                    { value: "Good portions" },
+                                    { value: "Unprofessional" },
+                                    { value: "Clean" },
+                                    { value: "Messy" },
+                                ]
+                            } />
                         </Form.Group>
                         <Form.Group controlId="rating">
                             <Form.Label>Rating</Form.Label>
