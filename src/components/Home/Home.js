@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import restaurantsData from '../restaurant.data';
 import './Home.css';
+import { NavLink } from "react-router-dom";
 
 import Card from 'react-bootstrap/Card'
 import Badge from "react-bootstrap/Badge";
@@ -41,7 +42,9 @@ class Home extends Component {
                 </Card.Header>
                 <Card.Body>
                   <Card.Title>{name}</Card.Title>
-                  <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
+                  <NavLink to={`/${name.toLowerCase()}`}>
+                    <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
+                  </NavLink>
                   <Card.Title style={{ "font-size": "1.8em" }}>
                     Rating: <Badge variant="info">{rating}</Badge>{" "}
                   </Card.Title>
@@ -53,6 +56,9 @@ class Home extends Component {
                     starSpacing='1px'
                     name='rating'
                   />
+                  <NavLink to={`/${name.toLowerCase()}/menu`}>
+                    <Card.Text className='mt-2' style={{ "font-size": "1.2em" }}>See Menu</Card.Text>
+                  </NavLink>
                 </Card.Body>
               </Card>
             ))
