@@ -16,35 +16,41 @@ class Promotions extends Component {
           order: 0,
           imgsrc: "/Logos/McDs.png",
           title: "Free Big Mac with any $20+ purchase",
+          nextref: "/mcdonalds",
           expiry: "1 week",
         },
         {
           order: 1,
           imgsrc: "Logos/Subway.png",
           title: "Buy 1 foot long, get another free",
+          nextref: "/subway",
           expiry: "1 week, 2 days",
         },
         {
           order: 2,
           imgsrc: "Logos/Subway.png",
           title: "Free drink with any premium foot long sub",
+          nextref: "/subway",
           expiry: "1 week, 3 days",
         },
         {
           order: 3,
           imgsrc: "Logos/McDs.png",
           title: "Free fries with uber eats order of $20",
+          nextref: "/mcdonalds",
           expiry: "2 weeks",
         },
         {
           order: 4,
           imgsrc: "Logos/pinks.png",
           title: "Free upgrade to cheese fries with any Triple Burger combo",
+          nextref: "/pinks",
           expiry: "3 weeks",
         },
         {
           order: 5,
           imgsrc: "Logos/Subway.png",
+          nextref: "/subway",
           title:
             "Free macadamia nut cookie with the purchase of a foot long combo",
           expiry: "4 weeks",
@@ -55,35 +61,41 @@ class Promotions extends Component {
           order: 0,
           imgsrc: "/Logos/McDs.png",
           title: "Free Big Mac with any $20+ purchase",
+          nextref: "/mcdonalds",
           expiry: "1 week",
         },
         {
           order: 1,
           imgsrc: "Logos/Subway.png",
           title: "Buy 1 foot long, get another free",
+          nextref: "/subway",
           expiry: "1 week, 2 days",
         },
         {
           order: 2,
           imgsrc: "Logos/Subway.png",
           title: "Free drink with any premium foot long sub",
+          nextref: "/subway",
           expiry: "1 week, 3 days",
         },
         {
           order: 3,
           imgsrc: "Logos/McDs.png",
           title: "Free fries with uber eats order of $20",
+          nextref: "/mcdonalds",
           expiry: "2 weeks",
         },
         {
           order: 4,
           imgsrc: "Logos/pinks.png",
           title: "Free upgrade to cheese fries with any Triple Burger combo",
+          nextref: "/pinks",
           expiry: "3 weeks",
         },
         {
           order: 5,
           imgsrc: "Logos/Subway.png",
+          nextref: "/subway",
           title:
             "Free macadamia nut cookie with the purchase of a foot long combo",
           expiry: "4 weeks",
@@ -94,41 +106,48 @@ class Promotions extends Component {
           order: 0,
           imgsrc: "/Logos/McDs.png",
           title: "Free Big Mac with any $20+ purchase",
+          nextref: "/mcdonalds",
           expiry: "1 week",
         },
         {
           order: 1,
           imgsrc: "Logos/Subway.png",
           title: "Buy 1 foot long, get another free",
+          nextref: "/subway",
           expiry: "1 week, 2 days",
         },
         {
           order: 2,
           imgsrc: "Logos/Subway.png",
           title: "Free drink with any premium foot long sub",
+          nextref: "/subway",
           expiry: "1 week, 3 days",
         },
         {
           order: 3,
           imgsrc: "Logos/McDs.png",
           title: "Free fries with uber eats order of $20",
+          nextref: "/mcdonalds",
           expiry: "2 weeks",
         },
         {
           order: 4,
           imgsrc: "Logos/pinks.png",
           title: "Free upgrade to cheese fries with any Triple Burger combo",
+          nextref: "/pinks",
           expiry: "3 weeks",
         },
         {
           order: 5,
           imgsrc: "Logos/Subway.png",
+          nextref: "/subway",
           title:
             "Free macadamia nut cookie with the purchase of a foot long combo",
           expiry: "4 weeks",
         },
       ].reverse(),
       clickedPromo: false,
+      successtext: "",
       // currpromos: [],
     };
 
@@ -145,6 +164,7 @@ class Promotions extends Component {
     return a;
   };
   changeOrder = (clickedOption) => {
+    this.setState({ clickedPromo: false, successtext: "" });
     if (clickedOption === "sort") {
       this.setState({ currpromos: this.state.sortedpromos });
     } else if (clickedOption === "reverse") {
@@ -153,6 +173,12 @@ class Promotions extends Component {
   };
   newPromo = () => {
     this.setState({ clickedPromo: true });
+  };
+  submittedURL = () => {
+    this.setState({
+      successtext:
+        "Thank you for submitting the promotion! Our team will review and post it shortly.",
+    });
   };
   render() {
     if (this.state.clickedPromo) {
@@ -211,7 +237,14 @@ class Promotions extends Component {
               aria-label="Username"
               aria-describedby="basic-addon1"
             />
+            <button
+              onClick={this.submittedURL}
+              className="btn btn-primary btn-sm m-2"
+            >
+              Submit
+            </button>
           </div>
+          <a>{this.state.successtext}</a>
           <div className={"py-5"}> </div>
           <div>
             {this.state.currpromos.map((promo) => (
@@ -221,6 +254,7 @@ class Promotions extends Component {
                 key={promo.order}
                 imgsrc={promo.imgsrc}
                 expiry={promo.expiry}
+                nextref={promo.nextref}
               />
             ))}
           </div>
@@ -275,6 +309,7 @@ class Promotions extends Component {
                 key={promo.order}
                 imgsrc={promo.imgsrc}
                 expiry={promo.expiry}
+                nextref={promo.nextref}
               />
             ))}
           </div>
