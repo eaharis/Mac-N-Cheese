@@ -204,7 +204,7 @@ const Profile = () => {
                                 </Form.Row>
                             </Form.Row>
                         </Card.Body>
-                        <Button variant="warning" size="lg" block={true} onClick={() => Swal.fire({
+                        <Button variant="info" size="lg" block={true} onClick={() => Swal.fire({
                             position: 'center',
                             icon: 'success',
                             title: 'Profile saved',

@@ -241,7 +241,7 @@ const MeetingScheduler = () => {
                             </Form.Row>
                             <Form.Row>
                                 <Col md={12}>
-                                    <button class="form-control btn-warning font-weight-bold" onClick={() => Swal.fire({
+                                    <button class="form-control btn-info font-weight-bold" onClick={() => Swal.fire({
                                         icon: 'success',
                                         title: 'Invitation sent',
                                         showConfirmButton: false,
