@@ -1,5 +1,5 @@
 import './App.css';
-import { Component } from "react";
+import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Promotions from "./components/Promotions/Promotions";
 import Header from './components/Header/Header';

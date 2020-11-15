@@ -23,7 +23,7 @@ class ShowReview extends Component {
 
         this.state = {
             reviews: reviewData,
-            restaurantName: props.restaurantName
+            restaurantName: props.restaurantName,
         }
     }
 
@@ -31,7 +31,7 @@ class ShowReview extends Component {
         return (
             <div className="preview">
                 {
-                    this.state.reviews.map(({ name, imageURL, rating, description, restaurant, tags, like=false }) => (
+                    this.state.reviews.map(({ name, imageURL, rating, description, restaurant, tags, like }) => (
                         <Card className="m-1" style={{width: "23rem"}}>
                             <Card.Header>
                                 <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
