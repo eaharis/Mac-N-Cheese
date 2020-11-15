@@ -31,28 +31,28 @@ class stories extends Component {
       profs: [
         {
           imgsrc: "profiles/declan.jpg",
-          name: "Declan",
+          name: "Darryl",
           id: 0,
           restaurantname: "Pink's",
           newref: "/pinks",
         },
         {
           imgsrc: "profiles/esam.jpg",
-          name: "Esam",
+          name: "Emmett",
           id: 1,
           restaurantname: "Subway",
           newref: "/subway",
         },
         {
           imgsrc: "profiles/ali.jpg",
-          name: "Ali",
+          name: "Amy",
           id: 2,
           restaurantname: "McDonald's",
           newref: "/mcdonalds",
         },
         {
           imgsrc: "profiles/jack.jpg",
-          name: "Jack",
+          name: "John",
           id: 3,
           restaurantname: "Bistro",
           newref: "/bistro",

@@ -27,7 +27,7 @@ class Restaurant extends Component {
 
         this.state = {
             restaurant: restaurantsData.find(element => element.name.toLowerCase() === this.props.match.params.restaurant),
-            reviewsList: reviewData
+            reviewsList: reviewData,
         }
     }
 
@@ -102,7 +102,7 @@ class Restaurant extends Component {
                         </Col>
                     </Row>
                     <Row className="reviews">
-                        <ShowReview restaurantName={this.state.restaurant.name}  />
+                        <ShowReview restaurantName={this.state.restaurant.name} />
                     </Row>
                 </Container>
             </div>
