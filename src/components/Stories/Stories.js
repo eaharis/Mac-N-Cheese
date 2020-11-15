@@ -10,6 +10,7 @@ import PromotionItem from "../Promotions/PromotionItem";
 class stories extends Component {
   state = {};
 
+
   constructor(props) {
     super(props);
 
