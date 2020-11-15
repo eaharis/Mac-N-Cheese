@@ -13,19 +13,11 @@ import NewMap from './components/NewMap/NewMap';
 import Restaurant from "./components/Restaurant/Restaurant";
 import Stories from "./components/Stories/Stories";
 import * as pages from './store/pageNames';
-import FontSizeChanger from 'react-font-size-changer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <FontSizeChanger
-          targets={['body']}
-          options={{
-            stepSize: 2,
-            range: 3
-          }}
-        />
         <Header />
         <Switch>
           <Route path={pages.PROFILE} component={Profile} />
