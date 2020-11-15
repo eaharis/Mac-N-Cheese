@@ -24,7 +24,9 @@ const Profile = () => {
     const [firstName, setFirstName] = useState("Ada");
     const [lastName, setLastName] = useState("Lovelace");
 
-    const [phoneNumber, setPhoneNumber] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("+19055259140");
+    const [email, setEmail] = useState("lovelace@mcmaster.ca");
+    const [description, setDescription] = useState("English mathematician and writer, known for work on Babbage's Analytical Engine");
 
     // Default image is Ada Lovelace
     const [profileImage, setProfileImage] = useState("https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE4MDAzNDEwODQwOTQ2MTkw/ada-lovelace-20825279-1-402.jpg");
@@ -61,7 +63,7 @@ const Profile = () => {
                                         <Col md={12} className="mb-3">
                                             <Form.Group>
                                                 <Form.Label className="font-weight-bold"><FontAwesomeIcon icon={faPencilAlt} /> Description</Form.Label>
-                                                <Form.Control as="textarea" rows={3} placeholder="Enter a short description about yourself here..." style={{ resize: "none" }}></Form.Control>
+                                                <Form.Control as="textarea" value={description} onChange={(e) => setDescription(e.target.value)} rows={4} placeholder="Enter a short description about yourself here..." style={{ resize: "none" }}></Form.Control>
                                             </Form.Group>
                                         </Col>
                                     </Form.Row>
@@ -136,7 +138,7 @@ const Profile = () => {
                                 {/* TODO: Validation of email. Is there a React component we can use? */}
                                 <Col className="mb-3">
                                     <Form.Label className="font-weight-bold"><FontAwesomeIcon icon={faEnvelope} /> Email</Form.Label>
-                                    <Form.Control as="input" placeholder="email@provider.com" required />
+                                    <Form.Control as="input" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email@provider.com" required />
                                 </Col>
                             </Form.Row>
                             <hr />
