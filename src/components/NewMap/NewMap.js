@@ -17,7 +17,6 @@ import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'react-bootstrap';
 
 const MacGeo = { lat: 43.2609, lng: -79.9192 }
-const backgroundColors = ["#CFF7FA", "#FAD6CF", "#DC0073"];
 
 function Map () {
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
@@ -136,7 +135,7 @@ class NewMap extends Component {
             mapElement={<div style={{ height: `100%` }} />} />
         </div>
         <div className='category m-1' >
-          <Card border="primary" style={{"background-color": "#16BAC5", color: "#F0F0C9"}} >
+          <Card border="primary" style={{"background-color": "#13505B", color: "#F0F0C9"}} >
             <Card.Header style={{ "font-size": "1.8em" }}>All Restaurants</Card.Header>
             <Card.Body>
               <SearchBox
@@ -165,7 +164,7 @@ class NewMap extends Component {
               .filter(restaurant => restaurant.name.toLowerCase().includes(this.state.searchField.toLowerCase()))
               .map(({ id, name, imageUrl, rating }, idx) => (
                 <div key={id}>
-                  <Card className='p-2' style={{ "background-color": `${backgroundColors[idx%4]}` }}>
+                  <Card className='p-2' border="primary">
                     <Row>
                       <Col sm={4}>
                         <Card.Header>

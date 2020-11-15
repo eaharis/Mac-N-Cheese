@@ -1,6 +1,7 @@
 .map-container {
     display: flex;
     flex-direction: row;
+    background-color: #a9d8cb;
 }
 
 .category {
