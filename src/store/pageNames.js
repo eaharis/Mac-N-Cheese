@@ -1,6 +1,9 @@
-export const HOME = "home";
-export const BROWSE = "browse";
-export const PROMOTIONS = "promotions";
-export const DINEIN = "dine-in";
-export const STORIES = "stories";
-export const SIGNIN = "sign-in";
+export const HOME = "/";
+export const BROWSE = "/browse";
+export const PROMOTIONS = "/promotions";
+export const DINEIN = "/schedule";
+export const STORIES = "/stories";
+export const SIGNIN = '/login';
+export const PROFILE = '/profile';
+export const RESTAURANT = '/:restaurant';
+export const MENU = RESTAURANT + '/menu';

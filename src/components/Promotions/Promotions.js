@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import PromotionItem from "./PromotionItem";
 import { Button, Dropdown } from "react-bootstrap";
 
-class promotions extends Component {
+class Promotions extends Component {
+
   state = {};
 
   constructor(props) {
@@ -283,4 +284,5 @@ class promotions extends Component {
   }
 }
 
-export default connect()(promotions);
+export default connect()(Promotions);
+
