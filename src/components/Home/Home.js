@@ -4,6 +4,7 @@ import restaurantsData from '../restaurant.data';
 import './Home.css';
 import ShowReview from "../ShowReview/ShowReview";
 import { Rating } from '@material-ui/lab';
+import { NavLink } from "react-router-dom";
 import Card from 'react-bootstrap/Card'
 import Badge from "react-bootstrap/Badge";
 import Image from "react-bootstrap/Image";
@@ -40,12 +41,17 @@ class Home extends Component {
                   />
                 </Card.Header>
                 <Card.Body>
-
-                  <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
+                  <Card.Title>{name}</Card.Title>
+                  <NavLink to={`/${name.toLowerCase()}`}>
+                    <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
+                  </NavLink>
                   <Card.Title style={{ "font-size": "1.8em" }}>
                     Rating: <Badge variant="info">{rating}</Badge>{" "}
                   </Card.Title>
-                    <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
+                  <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
+                  <NavLink to={`/${name.toLowerCase()}/menu`}>
+                    <Card.Text className='mt-2' style={{ "font-size": "1.2em" }}>See Menu</Card.Text>
+                  </NavLink>
                 </Card.Body>
               </Card>
             ))
