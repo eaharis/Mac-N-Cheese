@@ -35,7 +35,7 @@ function Map () {
   }, []);
 
   return (
-      <GoogleMap defaultZoom={15} defaultCenter={{ lat: 43.2609, lng: -79.9192 }} >
+      <GoogleMap defaultZoom={16} defaultCenter={{ lat: 43.2609, lng: -79.9192 }} >
         {
           restaurantsData.map((restaurant) => (
             <Marker 
