@@ -20,14 +20,14 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className='home-container'>
         <h1>
           <Badge pill variant="dark">Top Restaurants</Badge>
         </h1>
         <div className='preview'>
           {
-            this.state.restaurants.map(({ name, imageUrl, rating }) => (
-              <Card className='m-1' style={{ width: '23rem' }}>
+            this.state.restaurants.map(({ name, imageUrl, rating }, idx) => (
+              <Card className='m-1' style={{ width: '24%' }} >
                 <Card.Header>
                   <Image
                     src={imageUrl}

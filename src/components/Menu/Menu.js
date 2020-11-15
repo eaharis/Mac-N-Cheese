@@ -54,7 +54,7 @@ class Menu extends Component {
 
   render() {
     return (
-      <div>
+      <div className='menu-container'>
         <div className="header m-1">
           <Image
             src={`/${this.state.restaurant}.jpg`}
@@ -87,7 +87,7 @@ class Menu extends Component {
             this.state.menuItems
               .map(({ name, imageUrl, price, description, id }) => (
                 <div key={id}>
-                  <Card className='p-2' >
+                  <Card border='primary' className='p-2' >
                     <Row>
                       <Col sm={4}>
                         <Card.Header>
