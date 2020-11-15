@@ -1,0 +1,18 @@
+.map-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #a9d8cb;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
