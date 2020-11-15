@@ -37,11 +37,11 @@ const reducer = ( state = initialState, action ) => {
                 ...state,
                 clickedPage: pages.STORIES
             }
-        case actionTypes.CLICKSIGNIN:
-            console.log("login");
+        case actionTypes.CLICKPROFILE:
+            console.log("profile");
             return {
                 ...state,
-                clickedPage: pages.SIGNIN
+                clickedPage: pages.PROFILE
             }
         default:
             return state;

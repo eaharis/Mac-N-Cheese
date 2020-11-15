@@ -22,7 +22,7 @@ class Home extends Component {
     return (
       <div>
         <h1>
-          <Badge variant="secondary">Top Restaurants</Badge>
+          <Badge pill variant="dark">Top Restaurants</Badge>
         </h1>
         <div className='preview'>
           {
@@ -46,7 +46,7 @@ class Home extends Component {
                     <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
                   </NavLink>
                   <Card.Title style={{ "font-size": "1.8em" }}>
-                    Rating: <Badge variant="info">{rating}</Badge>{" "}
+                    Rating: <Badge pill variant="warning">{rating}</Badge>{" "}
                   </Card.Title>
                   <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
                   <NavLink to={`/${name.toLowerCase()}/menu`}>
@@ -58,10 +58,10 @@ class Home extends Component {
           }
         </div>
         <h1>
-          <Badge variant="secondary">Top Reviews</Badge>
+          <Badge pill variant="dark">Top Reviews</Badge>
         </h1>
         <div className='preview'>
-            <ShowReview />
+            <ShowReview/>
         </div>
       </div>
     )

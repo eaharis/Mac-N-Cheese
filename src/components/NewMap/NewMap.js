@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import './Map.css';
 import SearchBox from '../SearchBox/SearchBox';
-
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "react-google-maps";
 import restaurantsData from '../restaurant.data';
 import Card from 'react-bootstrap/Card'
@@ -11,7 +10,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Badge from "react-bootstrap/Badge";
 import Image from "react-bootstrap/Image";
-import StarRatings from 'react-star-ratings';
+import { Rating } from '@material-ui/lab';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'react-bootstrap';
@@ -185,16 +184,10 @@ class NewMap extends Component {
                           <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
                         </NavLink>
                         <Card.Title style={{ "font-size": "1.8em" }}>
-                          Rating: <Badge variant="info">{rating}</Badge>{" "}
+                          Rating: <Badge pill variant="warning">{rating}</Badge>{" "}
                         </Card.Title>
-                        <StarRatings
-                          rating={rating}
-                          starDimension="1.8em"
-                          starRatedColor="green"
-                          numberOfStars={5}
-                          starSpacing='1px'
-                          name='rating'
-                        />
+                        <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
+
                         <NavLink to={`/${name.toLowerCase()}/menu`}>
                           <Card.Text className='mt-2' style={{ "font-size": "1.2em" }}>See Menu</Card.Text>
                         </NavLink>
