@@ -27,6 +27,13 @@
   height: auto;
 }
 
+.centered {
+  height: 100vh !important; /* Magic here */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.center {margin:0 auto;}
 .App-link {
   color: #61dafb;
 }

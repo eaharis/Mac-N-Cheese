@@ -128,6 +128,7 @@ class promotions extends Component {
         },
       ].reverse(),
       clickedPromo: false,
+      successtext: "",
       // currpromos: [],
     };
 
@@ -144,6 +145,7 @@ class promotions extends Component {
     return a;
   };
   changeOrder = (clickedOption) => {
+    this.setState({ clickedPromo: false, successtext: "" });
     if (clickedOption === "sort") {
       this.setState({ currpromos: this.state.sortedpromos });
     } else if (clickedOption === "reverse") {
@@ -152,6 +154,12 @@ class promotions extends Component {
   };
   newPromo = () => {
     this.setState({ clickedPromo: true });
+  };
+  submittedURL = () => {
+    this.setState({
+      successtext:
+        "Thank you for submitting the promotion! Our team will review and post it shortly.",
+    });
   };
   render() {
     if (this.state.clickedPromo) {
@@ -210,7 +218,14 @@ class promotions extends Component {
               aria-label="Username"
               aria-describedby="basic-addon1"
             />
+            <button
+              onClick={this.submittedURL}
+              className="btn btn-primary btn-sm m-2"
+            >
+              Submit
+            </button>
           </div>
+          <a>{this.state.successtext}</a>
           <div className={"py-5"}> </div>
           <div>
             {this.state.currpromos.map((promo) => (
