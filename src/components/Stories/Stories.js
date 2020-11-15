@@ -17,11 +17,16 @@ class stories extends Component {
       posts: [],
       storyimgsrcs: [
         ["/samplestories/chinese.jpg", "/samplestories/oreo.jpg"],
-        ["/samplestories/donuts.jpg"],
+        ["/samplestories/mcdeez.png", "/samplestories/donuts.jpg"],
         ["/samplestories/minipizza.jpg", "/samplestories/pizza.jpg"],
-        ["/samplestories/fries.jpg"],
-        ["/samplestories/juices.jpg"],
-        ["/samplestories/burgers.jpg"],
+        ["/samplestories/fries.jpg", "/samplestories/popcorn.jpg"],
+        [
+          "/samplestories/juices.jpg",
+          "/samplestories/cherry.jpg",
+
+          "/samplestories/flurry.jpg",
+        ],
+        ["/samplestories/burgers.jpg", "/samplestories/chips.jpg"],
       ],
       profs: [
         { imgsrc: "profiles/declan.jpg", name: "Declan", id: 0 },
