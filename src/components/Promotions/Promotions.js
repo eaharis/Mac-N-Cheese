@@ -4,6 +4,7 @@ import PromotionItem from "./PromotionItem";
 import { Button, Dropdown } from "react-bootstrap";
 
 class Promotions extends Component {
+
   state = {};
 
   constructor(props) {
@@ -284,3 +285,4 @@ class Promotions extends Component {
 }
 
 export default connect()(Promotions);
+

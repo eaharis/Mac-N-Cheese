@@ -5,6 +5,7 @@ class restaurant extends Component {
     render() {
         return null;
     }
+
 }
 
 export default connect()(restaurant);

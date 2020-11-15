@@ -13,7 +13,7 @@ import * as pages from '../../store/pageNames';
 class Header extends Component {
     render() {
         return (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
+             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
                 <Navbar.Brand href={pages.HOME}>
                     <img
                         alt=""
@@ -32,6 +32,7 @@ class Header extends Component {
                         <Nav.Link href={pages.PROMOTIONS} onSelect={this.props.clickedPromotions}>Promotions</Nav.Link>
                         <Nav.Link href={pages.DINEIN} onSelect={this.props.clickedDineIn}>Dine In</Nav.Link>
                         <Nav.Link href={pages.STORIES} onSelect={this.props.clickedStories}>Stories</Nav.Link>
+
                         <NavDropdown title="Accessibility" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#increase-size" className="dropdown">a | A</NavDropdown.Item>
                         </NavDropdown>
