@@ -15,35 +15,41 @@ class promotions extends Component {
           order: 0,
           imgsrc: "/Logos/McDs.png",
           title: "Free Big Mac with any $20+ purchase",
+          nextref: "/mcdonalds",
           expiry: "1 week",
         },
         {
           order: 1,
           imgsrc: "Logos/Subway.png",
           title: "Buy 1 foot long, get another free",
+          nextref: "/subway",
           expiry: "1 week, 2 days",
         },
         {
           order: 2,
           imgsrc: "Logos/Subway.png",
           title: "Free drink with any premium foot long sub",
+          nextref: "/subway",
           expiry: "1 week, 3 days",
         },
         {
           order: 3,
           imgsrc: "Logos/McDs.png",
           title: "Free fries with uber eats order of $20",
+          nextref: "/mcdonalds",
           expiry: "2 weeks",
         },
         {
           order: 4,
           imgsrc: "Logos/pinks.png",
           title: "Free upgrade to cheese fries with any Triple Burger combo",
+          nextref: "/pinks",
           expiry: "3 weeks",
         },
         {
           order: 5,
           imgsrc: "Logos/Subway.png",
+          nextref: "/subway",
           title:
             "Free macadamia nut cookie with the purchase of a foot long combo",
           expiry: "4 weeks",
@@ -54,35 +60,41 @@ class promotions extends Component {
           order: 0,
           imgsrc: "/Logos/McDs.png",
           title: "Free Big Mac with any $20+ purchase",
+          nextref: "/mcdonalds",
           expiry: "1 week",
         },
         {
           order: 1,
           imgsrc: "Logos/Subway.png",
           title: "Buy 1 foot long, get another free",
+          nextref: "/subway",
           expiry: "1 week, 2 days",
         },
         {
           order: 2,
           imgsrc: "Logos/Subway.png",
           title: "Free drink with any premium foot long sub",
+          nextref: "/subway",
           expiry: "1 week, 3 days",
         },
         {
           order: 3,
           imgsrc: "Logos/McDs.png",
           title: "Free fries with uber eats order of $20",
+          nextref: "/mcdonalds",
           expiry: "2 weeks",
         },
         {
           order: 4,
           imgsrc: "Logos/pinks.png",
           title: "Free upgrade to cheese fries with any Triple Burger combo",
+          nextref: "/pinks",
           expiry: "3 weeks",
         },
         {
           order: 5,
           imgsrc: "Logos/Subway.png",
+          nextref: "/subway",
           title:
             "Free macadamia nut cookie with the purchase of a foot long combo",
           expiry: "4 weeks",
@@ -93,35 +105,41 @@ class promotions extends Component {
           order: 0,
           imgsrc: "/Logos/McDs.png",
           title: "Free Big Mac with any $20+ purchase",
+          nextref: "/mcdonalds",
           expiry: "1 week",
         },
         {
           order: 1,
           imgsrc: "Logos/Subway.png",
           title: "Buy 1 foot long, get another free",
+          nextref: "/subway",
           expiry: "1 week, 2 days",
         },
         {
           order: 2,
           imgsrc: "Logos/Subway.png",
           title: "Free drink with any premium foot long sub",
+          nextref: "/subway",
           expiry: "1 week, 3 days",
         },
         {
           order: 3,
           imgsrc: "Logos/McDs.png",
           title: "Free fries with uber eats order of $20",
+          nextref: "/mcdonalds",
           expiry: "2 weeks",
         },
         {
           order: 4,
           imgsrc: "Logos/pinks.png",
           title: "Free upgrade to cheese fries with any Triple Burger combo",
+          nextref: "/pinks",
           expiry: "3 weeks",
         },
         {
           order: 5,
           imgsrc: "Logos/Subway.png",
+          nextref: "/subway",
           title:
             "Free macadamia nut cookie with the purchase of a foot long combo",
           expiry: "4 weeks",
@@ -235,6 +253,7 @@ class promotions extends Component {
                 key={promo.order}
                 imgsrc={promo.imgsrc}
                 expiry={promo.expiry}
+                nextref={promo.nextref}
               />
             ))}
           </div>
@@ -289,6 +308,7 @@ class promotions extends Component {
                 key={promo.order}
                 imgsrc={promo.imgsrc}
                 expiry={promo.expiry}
+                nextref={promo.nextref}
               />
             ))}
           </div>
