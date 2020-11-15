@@ -55,9 +55,9 @@ class Menu extends Component {
   render() {
     return (
       <div>
-        <div className="header">
+        <div className="header m-1">
           <Image
-            src='/pinks.jpg'
+            src={`/${this.state.restaurant}.jpg`}
             style={{
               display: "block",
               margin: "auto",
@@ -66,7 +66,7 @@ class Menu extends Component {
             }}
             rounded
           />
-          <Dropdown as={ButtonGroup} className='mr-2' >
+          <Dropdown as={ButtonGroup} className='m-1' >
             <Button variant="success">All Menus</Button>
             <Dropdown.Toggle split variant="success" id="dropdown-split-basic" />
             <Dropdown.Menu>
