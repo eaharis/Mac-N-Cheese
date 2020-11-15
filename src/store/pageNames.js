@@ -8,3 +8,4 @@ export const PROFILE = '/profile';
 export const RESTAURANT = '/:restaurant';
 export const MENU = RESTAURANT + '/menu';
 export const NEWMAP = '/newmap';
+export const SCHEDULER = '/scheduler';

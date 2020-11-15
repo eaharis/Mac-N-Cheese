@@ -5,13 +5,13 @@ import { Route, Switch } from "react-router-dom";
 import Promotions from "./components/Promotions/Promotions";
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
+import MeetingScheduler from './components/MeetingScheduler/MeetingScheduler';
 import Menu from "./components/Menu/Menu";
 import Map from './components/Map/Map';
 import Home from './components/Home/Home';
 import NewMap from './components/NewMap/NewMap';
 import Restaurant from "./components/Restaurant/Restaurant";
 import Stories from "./components/Stories/Stories";
-import MeetingScheduler from "./components/MeetingScheduler/MeetingScheduler";
 import * as pages from './store/pageNames';
 
 class App extends Component {
