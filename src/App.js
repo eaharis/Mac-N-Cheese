@@ -13,25 +13,33 @@ import NewMap from './components/NewMap/NewMap';
 import Restaurant from "./components/Restaurant/Restaurant";
 import Stories from "./components/Stories/Stories";
 import * as pages from './store/pageNames';
+import FontSizeChanger from 'react-font-size-changer';
 
 class App extends Component {
   render() {
-      return (
-          <div className="App">
-              <Header />
-                  <Switch>
-                      <Route path={pages.PROFILE} component={Profile} />
-                      <Route path={pages.MENU} component={Menu} />
-                      <Route exact path={pages.DINEIN} component={MeetingScheduler} />
-                      <Route exact path={pages.STORIES} component={Stories} />
-                      <Route exact path={pages.BROWSE} component={Map} />
-                      <Route exact path={pages.NEWMAP} component={NewMap} />
-                      <Route exact path={pages.PROMOTIONS} component={Promotions} />
-                      <Route path={pages.RESTAURANT} component={Restaurant} />
-                      <Route exact path={pages.HOME} component={Home} />
-                  </Switch>
-          </div>
-      );
+    return (
+      <div className="App">
+        <FontSizeChanger
+          targets={['body']}
+          options={{
+            stepSize: 2,
+            range: 3
+          }}
+        />
+        <Header />
+        <Switch>
+          <Route path={pages.PROFILE} component={Profile} />
+          <Route path={pages.MENU} component={Menu} />
+          <Route exact path={pages.DINEIN} component={MeetingScheduler} />
+          <Route exact path={pages.STORIES} component={Stories} />
+          <Route exact path={pages.BROWSE} component={Map} />
+          <Route exact path={pages.NEWMAP} component={NewMap} />
+          <Route exact path={pages.PROMOTIONS} component={Promotions} />
+          <Route path={pages.RESTAURANT} component={Restaurant} />
+          <Route exact path={pages.HOME} component={Home} />
+        </Switch>
+      </div>
+    );
 
   }
 }

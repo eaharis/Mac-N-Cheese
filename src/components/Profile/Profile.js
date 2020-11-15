@@ -21,6 +21,8 @@ import Swal from 'sweetalert2';
 
 
 const Profile = () => {
+    const [firstName, setFirstName] = useState("Ada");
+    const [lastName, setLastName] = useState("Lovelace");
 
     const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -54,7 +56,7 @@ const Profile = () => {
                                     </p>
                                 </div>
                                 <div className="mt-3">
-                                    <h4>Ada Lovelace</h4>
+                                    <h4>{firstName} {lastName}</h4>
                                     <Form.Row>
                                         <Col md={12} className="mb-3">
                                             <Form.Group>
@@ -109,11 +111,11 @@ const Profile = () => {
                             <Form.Row>
                                 <Col md={4} className="mb-3">
                                     <Form.Label className="font-weight-bold"><FontAwesomeIcon icon={faUser} /> First name</Form.Label>
-                                    <Form.Control as="input" placeholder="Ada" required />
+                                    <Form.Control as="input" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="Ada" required />
                                 </Col>
                                 <Col md={4} className="mb-3">
                                     <Form.Label className="font-weight-bold">Last name</Form.Label>
-                                    <Form.Control as="input" placeholder="Lovelace" required />
+                                    <Form.Control as="input" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Lovelace" required />
                                 </Col>
                                 <Col md={4} className="mb-3">
                                     <Form.Label className="font-weight-bold"> Username</Form.Label>
@@ -183,12 +185,12 @@ const Profile = () => {
                             </Form.Row>
                         </Card.Body>
                         <Button variant="warning" size="lg" block={true} onClick={() => Swal.fire({
-                            position: 'top-right',
+                            position: 'center',
                             icon: 'success',
                             title: 'Profile saved',
-                            toast: true,
                             showConfirmButton: false,
-                            timer: 1500
+                            timerProgressBar: true,
+                            timer: 1500,
                         })}><FontAwesomeIcon icon={faSave} /> Save</Button>
                     </Card>
                 </Col>
