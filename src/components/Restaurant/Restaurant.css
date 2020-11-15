@@ -1,0 +1,87 @@
+.preview {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.infoCard {
+
+    padding: 0em;
+}
+
+.restName {
+    font-size: 4.0em;
+    padding-top: 0em;
+    text-align: left;
+    font-weight: bolder;
+    padding-bottom: 0em;
+}
+
+.caption {
+    color: #4e555b;
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0em;
+    justify-content: left;
+    text-align: left;
+    font-style: oblique;
+    font-weight: bold;
+}
+.address {
+    padding-top: 0em;
+    color: #4e555b;
+    font-size: 1.3em;
+    font-style: italic;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.hoursTitle {
+    color: #4e555b;
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    text-align: left;
+    font-weight: bold;
+}
+
+.hours {
+    color: #4e555b;
+    font-size: 1.3em;
+    font-style: italic;
+    text-align: left;
+}
+
+.busynessTitle {
+    color: #4e555b;
+    padding-top: 0.5em;
+    font-size: 1.5em;
+    text-align: left;
+    font-weight: bold;
+}
+
+.notBusy {
+    font-size: 1.3em;
+    text-align: left;
+    color: green;
+}
+
+.busy {
+    font-size: 1.3em;
+    text-align: left;
+    color: red;
+}
+
+.reviewsTitle {
+    padding-top: 0.5em;
+}
+
+.reviews {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.sortButton {
+    padding-top: 2em;
+
+}

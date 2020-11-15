@@ -68,6 +68,7 @@
     ]
   },
   "devDependencies": {
+    "@material-ui/icons": "^4.9.1",
     "react-redux": "^7.2.2"
   }
 }

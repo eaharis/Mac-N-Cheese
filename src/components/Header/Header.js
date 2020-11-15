@@ -28,7 +28,7 @@ class Header extends Component {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href={pages.HOME} onSelect={this.props.clickedHome}> Home</Nav.Link>
-                        <Nav.Link href={pages.BROWSE} onSelect={this.props.clickedBrowse}>Browse</Nav.Link>
+                        <Nav.Link href={pages.NEWMAP} onSelect={this.props.clickedBrowse}>Browse</Nav.Link>
                         <Nav.Link href={pages.PROMOTIONS} onSelect={this.props.clickedPromotions}>Promotions</Nav.Link>
                         <Nav.Link href={pages.DINEIN} onSelect={this.props.clickedDineIn}>Dine In</Nav.Link>
                         <Nav.Link href={pages.STORIES} onSelect={this.props.clickedStories}>Stories</Nav.Link>
@@ -38,7 +38,7 @@ class Header extends Component {
                         </NavDropdown>
                     </Nav>
                     <Nav className="nav-right">
-                        <Nav.Link href={pages.SIGNIN} className="sign-in" onSelect={this.props.clickedSignIn}>Sign Up / Login</Nav.Link>
+                        <Nav.Link href={pages.PROFILE} className="profile" onSelect={this.props.clickedProfile}>Profile</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -60,7 +60,7 @@ const mapDispatchToProps = dispatch => {
         clickedPromotions: () => dispatch({type: actionTypes.CLICKPROMOTIONS}),
         clickedDineIn: () => dispatch({type: actionTypes.CLICKDINEIN}),
         clickedStories: () => dispatch({type: actionTypes.CLICKSTORIES}),
-        clickedSignIn: () => dispatch({type: actionTypes.CLICKSIGNIN})
+        clickedProfile: () => dispatch({type: actionTypes.CLICKPROFILE})
     };
 };
 
