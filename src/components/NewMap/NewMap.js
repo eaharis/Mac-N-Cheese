@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from "react-router-dom";
 import './Map.css';
 import SearchBox from '../SearchBox/SearchBox';
 
@@ -180,7 +181,9 @@ class NewMap extends Component {
                         </Card.Header>
                       </Col>
                       <Col sm={8}>
-                        <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
+                        <NavLink to={`/${name.toLowerCase()}`}>
+                          <Card.Title style={{ "font-size": "1.8em" }}>{name}</Card.Title>
+                        </NavLink>
                         <Card.Title style={{ "font-size": "1.8em" }}>
                           Rating: <Badge variant="info">{rating}</Badge>{" "}
                         </Card.Title>
@@ -192,6 +195,9 @@ class NewMap extends Component {
                           starSpacing='1px'
                           name='rating'
                         />
+                        <NavLink to={`/${name.toLowerCase()}/menu`}>
+                          <Card.Text className='mt-2' style={{ "font-size": "1.2em" }}>See Menu</Card.Text>
+                        </NavLink>
                       </Col>
                     </Row>
                   </Card>
