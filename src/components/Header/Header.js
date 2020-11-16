@@ -5,8 +5,8 @@ import './Header.css'
 import { connect } from 'react-redux';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import NavDropdown from  'react-bootstrap/NavDropdown'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import * as actionTypes from "../../store/actionTypes"
 import * as pages from '../../store/pageNames';
@@ -15,11 +15,11 @@ import FontSizeChanger from 'react-font-size-changer';
 class Header extends Component {
     render() {
         return (
-             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
                 <Navbar.Brand href={pages.HOME}>
                     <img
                         alt=""
-                        src= {logo}
+                        src={logo}
                         width="125"
                         height="125"
                         className="d-inline-block align-top"
@@ -66,12 +66,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        clickedHome: () => dispatch({type: actionTypes.CLICKHOME}),
-        clickedBrowse: () => dispatch({type: actionTypes.CLICKBROWSE}),
-        clickedPromotions: () => dispatch({type: actionTypes.CLICKPROMOTIONS}),
-        clickedDineIn: () => dispatch({type: actionTypes.CLICKDINEIN}),
-        clickedStories: () => dispatch({type: actionTypes.CLICKSTORIES}),
-        clickedProfile: () => dispatch({type: actionTypes.CLICKPROFILE})
+        clickedHome: () => dispatch({ type: actionTypes.CLICKHOME }),
+        clickedBrowse: () => dispatch({ type: actionTypes.CLICKBROWSE }),
+        clickedPromotions: () => dispatch({ type: actionTypes.CLICKPROMOTIONS }),
+        clickedDineIn: () => dispatch({ type: actionTypes.CLICKDINEIN }),
+        clickedStories: () => dispatch({ type: actionTypes.CLICKSTORIES }),
+        clickedProfile: () => dispatch({ type: actionTypes.CLICKPROFILE })
     };
 };
 
